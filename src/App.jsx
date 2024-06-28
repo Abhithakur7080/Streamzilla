@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "./Layout";
+import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import {
   AdminDashboard,
@@ -21,42 +22,196 @@ import {
   TermsAndConditions,
   VideoDetails,
 } from "./pages";
+import { AuthLayout, LoginPopup } from "./components";
+import LoginSkeleton from "./skeletons/LoginSkeleton";
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Homepage />} />
+    <>
+      {/* <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route
+            index
+            element={
+              <AuthLayout authentication={false}>
+                <Homepage />
+              </AuthLayout>
+            }
+          />
 
-        {/* channel routes */}
-        <Route path="channel/:username" element={<Channel />}>
-          <Route path="videos" element={<ChannelVideos />} />
-          <Route path="playlists" element={<ChannelPlaylists />} />
-          <Route path="subscribers" element={<ChannelSubscribers />} />
-          <Route path="tweets" element={<ChannelTweets />} />
+          <Route
+            path="channel/:username"
+            element={
+              <AuthLayout authentication>
+                <Channel />
+              </AuthLayout>
+            }
+          >
+            <Route
+              path="videos"
+              element={
+                <AuthLayout authentication>
+                  <ChannelVideos />
+                </AuthLayout>
+              }
+            />
+            <Route
+              path="playlists"
+              element={
+                <AuthLayout authentication>
+                  <ChannelPlaylists />
+                </AuthLayout>
+              }
+            />
+            <Route
+              path="subscribers"
+              element={
+                <AuthLayout authentication={false}>
+                  <ChannelSubscribers />
+                </AuthLayout>
+              }
+            />
+            <Route
+              path="tweets"
+              element={
+                <AuthLayout authentication>
+                  <ChannelTweets />
+                </AuthLayout>
+              }
+            />
+          </Route>
+
+          <Route
+            path="/search/:query"
+            element={
+              <AuthLayout authentication={false}>
+                <SearchVideos />
+              </AuthLayout>
+            }
+          />
+
+          <Route
+            path="/history"
+            element={
+              <AuthLayout authentication>
+                <History />
+              </AuthLayout>
+            }
+          />
+
+          <Route
+            path="/liked-videos"
+            element={
+              <AuthLayout authentication>
+                <LikedVideos />
+              </AuthLayout>
+            }
+          />
+
+          <Route
+            path="/subscriptions"
+            element={
+              <AuthLayout authentication>
+                <Subscriptions />
+              </AuthLayout>
+            }
+          />
+
+          <Route
+            path="/edit"
+            element={
+              <AuthLayout authentication>
+                <EditChannel />
+              </AuthLayout>
+            }
+          >
+            <Route
+              path="personalInfo"
+              element={
+                <AuthLayout authentication>
+                  <EditPersonalInfo />
+                </AuthLayout>
+              }
+            />
+            <Route
+              path="password"
+              element={
+                <AuthLayout authentication>
+                  <ChangePassword />
+                </AuthLayout>
+              }
+            />
+          </Route>
         </Route>
 
-        <Route path="/search/:query" element={<SearchVideos />} />
+        <Route
+          path="/login"
+          element={
+            <AuthLayout authentication={false}>
+              <Channel />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <AuthLayout authentication={false}>
+              <Channel />
+            </AuthLayout>
+          }
+        />
 
-        <Route path="/history" element={<History />} />
-
-        <Route path="/liked-videos" element={<LikedVideos />} />
-
-        <Route path="/subscriptions" element={<Subscriptions />} />
-
-        <Route path="/edit" element={<EditChannel />}>
-          <Route path="personalInfo" element={<EditPersonalInfo />} />
-          <Route path="password" element={<ChangePassword />} />
-        </Route>
-      </Route>
-
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-
-      <Route path="/watch/:videoId" element={<VideoDetails />} />
-      <Route path="/collections" element={<AdminDashboard />} />
-      <Route path="/terms&conditions" element={<TermsAndConditions />} />
-    </Routes>
+        <Route
+          path="/watch/:videoId"
+          element={
+            <AuthLayout authentication>
+              <VideoDetails />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/collections"
+          element={
+            <AuthLayout authentication>
+              <AdminDashboard />
+            </AuthLayout>
+          }
+        />
+        <Route
+          path="/terms&conditions"
+          element={
+            <AuthLayout authentication>
+              <TermsAndConditions />
+            </AuthLayout>
+          }
+        />
+      </Routes> */}
+      {/* <Login/> */}
+      {/* <Signup/> */}
+      {/* <LoginPopup/> */}
+      <LoginSkeleton/>
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        toastOptions={{
+          error: {
+            style: {
+              borderRadius: 0,
+              color: "#fff",
+              background: "#222",
+            },
+          },
+          success: {
+            style: {
+              borderRadius: 0,
+              color: "#fff",
+              background: "#222",
+            },
+          },
+          duration: 4000,
+        }}
+      />
+    </>
   );
 };
 
