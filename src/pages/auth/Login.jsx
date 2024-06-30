@@ -44,13 +44,14 @@ const Login = () => {
                 label="Username or Email"
                 type="text"
                 placeholder="example123 or example@gmail.com"
+                error = {errors.username}
                 {...register("username", {
-                  required: "username or email is required",
+                  required: "Username or Email is required",
                 })}
                 className="h-8 py-5"
               />
               {errors.username && (
-                <span className="text-red-500">{errors.username.message}</span>
+                <span className="text-[#ff0000]">{errors.username.message}</span>
               )}
             </div>
             <div>
@@ -58,19 +59,20 @@ const Login = () => {
                 label="Password"
                 type="password"
                 placeholder="a6a76@nk4&%"
+                error = {errors.password}
                 {...register("password", {
-                  required: "password is required",
+                  required: "Password is required",
                 })}
                 className="h-8 py-5"
               />
               {errors.password && (
-                <span className="text-red-500">{errors.password.message}</span>
+                <span className="text-[#ff0000]">{errors.password.message}</span>
               )}
             </div>
 
             <Button
               type="submit"
-              className="w-full py-2 mt-4 sm:py-3 bg-red-500 hover:bg-red-600 text-lg text-white"
+              className="w-full py-2 mt-4 sm:py-3 bg-[#ff0000] hover:bg-[#ff2000] text-lg text-white"
             >
               Signup
             </Button>

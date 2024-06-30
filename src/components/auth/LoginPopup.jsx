@@ -11,7 +11,7 @@ const LoginPopup = () => {
         </div>
         <p className="text-xl font-medium mb-2">Login or Signup to continue</p>
         <Link to={"/login"}>
-            <Button className="bg-red-600 w-full py-2 px-4 font-bold text-lg rounded text-white shadow-inner">Login</Button>
+            <Button className="bg-[#ff0000] w-full py-2 px-4 font-bold text-lg rounded text-white shadow-inner">Login</Button>
         </Link>
       </div>
     </div>

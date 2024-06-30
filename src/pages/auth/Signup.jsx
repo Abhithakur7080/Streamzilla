@@ -55,7 +55,7 @@ const Signup = () => {
                 Cover Image
               </div>
               {errors.avatar && (
-                <div className="text-red-500">{errors.avatar.message}</div>
+                <div className="text-[#ff0000]">{errors.avatar.message}</div>
               )}
             </div>
             <div className="absolute left-2 bottom-2 rounded-full border-2">
@@ -76,12 +76,12 @@ const Signup = () => {
               placeholder="Enter username"
               error = {errors.username}
               {...register("username", {
-                required: "username is required",
+                required: "Username is required",
               })}
               className="h-8"
             />
             {errors.username && (
-              <span className="text-red-500">{errors.username.message}</span>
+              <span className="text-[#ff0000]">{errors.username.message}</span>
             )}
           </div>
           <div>
@@ -91,12 +91,12 @@ const Signup = () => {
               placeholder="Enter email"
               error = {errors.email}
               {...register("email", {
-                required: "email is required",
+                required: "Email is required",
               })}
               className="h-8"
             />
             {errors.email && (
-              <span className="text-red-500">{errors.email.message}</span>
+              <span className="text-[#ff0000]">{errors.email.message}</span>
             )}
           </div>
           <div>
@@ -106,18 +106,18 @@ const Signup = () => {
               placeholder="Enter password"
               error = {errors.password}
               {...register("password", {
-                required: "password is required",
+                required: "Password is required",
               })}
               className="h-8"
             />
             {errors.password && (
-              <span className="text-red-500">{errors.password.message}</span>
+              <span className="text-[#ff0000]">{errors.password.message}</span>
             )}
           </div>
 
           <Button
             type="submit"
-            className="w-full py-2 sm:py-3 bg-red-500 hover:bg-red-600 text-lg text-white hover:scale-100"
+            className="w-full py-2 sm:py-3 bg-[#ff0000] hover:bg-[#ff2000] text-lg text-white hover:scale-100"
           >
             Signup
           </Button>

@@ -22,8 +22,7 @@ import {
   TermsAndConditions,
   VideoDetails,
 } from "./pages";
-import { AuthLayout, LoginPopup } from "./components";
-import LoginSkeleton from "./skeletons/LoginSkeleton";
+import { AuthLayout, Navbar } from "./components";
 
 const App = () => {
   return (
@@ -148,7 +147,7 @@ const App = () => {
           path="/login"
           element={
             <AuthLayout authentication={false}>
-              <Channel />
+              <Login />
             </AuthLayout>
           }
         />
@@ -156,7 +155,7 @@ const App = () => {
           path="/signup"
           element={
             <AuthLayout authentication={false}>
-              <Channel />
+              <Signup />
             </AuthLayout>
           }
         />
@@ -187,9 +186,6 @@ const App = () => {
         />
       </Routes> */}
       {/* <Login/> */}
-      {/* <Signup/> */}
-      {/* <LoginPopup/> */}
-      <LoginSkeleton/>
       <Toaster
         position="top-right"
         reverseOrder={false}
