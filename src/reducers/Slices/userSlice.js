@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axiosInstance from "../../utils/axiosInstance";
-import toast from "react-hot-toast";
+import {toast} from "react-toastify";
 
 const initialState = {
   loading: false,
@@ -12,7 +12,7 @@ export const getUserChannelProfile = createAsyncThunk(
   "getUserChannelProfile",
   async (username) => {
     try {
-      const response = await axiosInstance.get(`/users/c/${username}`);
+      const response = await axiosInstance.get(`/user/c/${username}`);
       console.log(response.data);
       toast.success(response.data?.messege);
       return response.data;
@@ -24,7 +24,7 @@ export const getUserChannelProfile = createAsyncThunk(
 );
 export const getWatchHistory = createAsyncThunk("getWatchHistory", async () => {
   try {
-    const response = await axiosInstance.get("/users/watch-history");
+    const response = await axiosInstance.get("/user/watch-history");
     console.log(response.data.data);
     toast.success(response.data?.messege);
     return response.data.data;

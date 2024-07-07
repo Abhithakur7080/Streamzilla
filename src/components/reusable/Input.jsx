@@ -5,7 +5,6 @@ const Input = React.forwardRef(function Input(
   ref
 ) {
   const id = useId();
-  console.log(error);
   return (
     <div className="w-full">
       {label && (

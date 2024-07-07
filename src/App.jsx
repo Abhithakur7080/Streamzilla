@@ -1,6 +1,8 @@
 import React from "react";
 import Layout from "./Layout";
-import { Toaster } from "react-hot-toast";
+import { ToastContainer, cssTransition } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "animate.css/animate.min.css";
 import { Route, Routes } from "react-router-dom";
 import {
   AdminDashboard,
@@ -24,10 +26,15 @@ import {
 } from "./pages";
 import { AuthLayout, Navbar } from "./components";
 
+const bounce = cssTransition({
+  enter: "animate__animated animate__bounceIn",
+  exit: "animate__animated animate__bounceOut",
+});
+
 const App = () => {
   return (
     <>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Layout />}>
           <Route
             index
@@ -184,28 +191,19 @@ const App = () => {
             </AuthLayout>
           }
         />
-      </Routes> */}
-      {/* <Login/> */}
-      <Toaster
+      </Routes>
+      <ToastContainer
         position="top-right"
-        reverseOrder={false}
-        toastOptions={{
-          error: {
-            style: {
-              borderRadius: 0,
-              color: "#fff",
-              background: "#222",
-            },
-          },
-          success: {
-            style: {
-              borderRadius: 0,
-              color: "#fff",
-              background: "#222",
-            },
-          },
-          duration: 4000,
-        }}
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        transition={bounce}
+        toastClassName={"bg-black text-white rounded-none"}
       />
     </>
   );
