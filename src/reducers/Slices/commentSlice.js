@@ -54,7 +54,7 @@ export const deleteAcomment = createAsyncThunk(
   }
 );
 export const getVideoComments = createAsyncThunk(
-  "deleteAcomment",
+  "getVideoComments",
   async ({ videoId, page, limit }) => {
     const url = new URL(`${BASE_URL}/comment/${videoId}`);
     if (page) url.searchParams.set("page", page);

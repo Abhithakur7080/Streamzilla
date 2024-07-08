@@ -35,7 +35,7 @@ const Signup = () => {
   }
   return (
     <div className="w-full h-screen text-black flex justify-center items-start bg-img">
-      <div className="w-screen md:w-fit sm:max-w-5xl flex flex-col p-3 space-y-2 mt-5 md:mt-12 justify-center items-center md:border md:border-gray-200 md:bg-white">
+      <div className="w-fit sm:max-w-5xl flex flex-col p-3 space-y-2 justify-center items-center md:border md:border-gray-200 bg-white my-auto">
         <div className="flex items-center gap-2">
           <Logo />
         </div>

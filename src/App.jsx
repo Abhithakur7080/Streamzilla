@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "./Layout";
 import { ToastContainer, cssTransition } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -24,7 +24,9 @@ import {
   TermsAndConditions,
   VideoDetails,
 } from "./pages";
-import { AuthLayout, Navbar } from "./components";
+import { AuthLayout } from "./components";
+import { useDispatch } from "react-redux";
+import { getCurrentUser } from "./reducers/Slices/authSlice";
 
 const bounce = cssTransition({
   enter: "animate__animated animate__bounceIn",
@@ -32,6 +34,10 @@ const bounce = cssTransition({
 });
 
 const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCurrentUser());
+  }, [dispatch]);
   return (
     <>
       <Routes>

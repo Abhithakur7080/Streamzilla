@@ -1,17 +1,19 @@
 import React from "react";
 import { Logo, Button } from "../index";
 import { Link } from "react-router-dom";
+import { CiLock } from "react-icons/ci";
 
 const LoginPopup = () => {
   return (
-    <div className="fixed inset-0 flex justify-center items-center opacity-75 z-50 bg-img">
-      <div className="bg-white border border-slate-200 p-8 text-black text-center">
+    <div className="fixed inset-0 flex justify-center items-center bg-gray-500 opacity-75 z-50">
+      <div className="bg-white shadow-md border border-slate-300 p-8 text-black text-center scale-up-center">
         <div className="flex flex-col gap-2 items-center mb-10">
             <Logo size={30}/>
         </div>
-        <p className="text-xl font-medium mb-2">Login or Signup to continue</p>
+        <p className="flex justify-center items-center font-extrabold mb-2"><CiLock size={50}/></p>
+        <p className="text-lg font-medium mb-2">Login or Signup to continue</p>
         <Link to={"/login"}>
-            <Button className="bg-[#ff0000] w-full py-2 px-4 font-bold text-lg rounded text-white shadow-inner">Login</Button>
+            <Button className="bg-[#ff0000] hover:bg-[#ff2000] w-full py-2 px-4 font-bold text-lg rounded text-white shadow-inner">Login</Button>
         </Link>
       </div>
     </div>

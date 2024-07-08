@@ -11,7 +11,6 @@ const AuthLayout = ({ children, authentication }) => {
       return;
     }
   }, [authStatus, authentication, navigate]);
-
   if (authentication && authStatus !== authentication) {
     return <LoginPopup />;
   }

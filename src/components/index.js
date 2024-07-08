@@ -10,6 +10,8 @@ import SearchForSmallScreen from "./header/SearchForSmallScreen";
 import Container from "./reusable/Container";
 import InfiniteScroll from "./reusable/InfiniteScroll";
 import Navbar from "./header/Navbar";
+import Video from "./reusable/Video";
+import VideoList from "./reusable/VideoList";
 
 export {
   AuthLayout,
@@ -23,5 +25,7 @@ export {
   SearchForSmallScreen,
   Container,
   InfiniteScroll,
-  Navbar
+  Navbar,
+  Video,
+  VideoList
 };

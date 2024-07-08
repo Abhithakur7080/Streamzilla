@@ -15,13 +15,14 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.auth?.loading);
-  const submit = (data) => {
+
+  const submit = async (data) => {
     const isEmail = data.username.includes("@");
     const loginData = isEmail
       ? { email: data.username, password: data.password }
       : data;
-    const response = dispatch(userLogin(loginData));
-    const user = dispatch(getCurrentUser());
+    const response = await dispatch(userLogin(loginData));
+    const user = await dispatch(getCurrentUser());
     if (user && response?.payload) {
       navigate("/");
     }
@@ -29,9 +30,10 @@ const Login = () => {
   if (loading) {
     return <LoginSkeleton status="Logging in..." />;
   }
-  return <div className="w-full h-screen text-white flex justify-center items-start bg-img">
-    <div className="flex w-screen-sm md:max-w-5xl flex-col space-y-5 justify-center items-center md:border md:border-slate-300 p-3 md:mt-20 shadow-inner md:bg-white">
-    <div className="flex items-center gap-2 mt-8">
+  return (
+    <div className="w-full h-screen text-white flex justify-center items-start bg-img">
+      <div className="flex my-auto h-fit md:max-w-5xl flex-col space-y-5 justify-center items-center md:border md:border-slate-300 p-3 shadow-inner bg-white">
+        <div className="flex items-center gap-2 mt-8">
           <Logo />
         </div>
         <form
@@ -44,14 +46,16 @@ const Login = () => {
                 label="Username or Email"
                 type="text"
                 placeholder="example123 or example@gmail.com"
-                error = {errors.username}
+                error={errors.username}
                 {...register("username", {
                   required: "Username or Email is required",
                 })}
                 className="h-8 py-5"
               />
               {errors.username && (
-                <span className="text-[#ff0000]">{errors.username.message}</span>
+                <span className="text-[#ff0000]">
+                  {errors.username.message}
+                </span>
               )}
             </div>
             <div>
@@ -59,27 +63,30 @@ const Login = () => {
                 label="Password"
                 type="password"
                 placeholder="a6a76@nk4&%"
-                error = {errors.password}
+                error={errors.password}
                 {...register("password", {
                   required: "Password is required",
                 })}
                 className="h-8 py-5"
               />
               {errors.password && (
-                <span className="text-[#ff0000]">{errors.password.message}</span>
+                <span className="text-[#ff0000]">
+                  {errors.password.message}
+                </span>
               )}
             </div>
 
             <Button
               type="submit"
-              className="w-full py-2 mt-4 sm:py-3 bg-[#ff0000] hover:bg-[#ff2000] text-lg text-white"
+              className={`w-full py-2 mt-4 sm:py-3 text-lg text-white ${loading ? "bg-gray-600" : "bg-[#ff0000] hover:bg-[#ff2000]"}`}
             >
-              Signup
+              Login
             </Button>
           </div>
         </form>
+      </div>
     </div>
-  </div>;
+  );
 };
 
 export default Login;

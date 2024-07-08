@@ -42,7 +42,7 @@ const Navbar = () => {
         <Logo iconColor="#fff" textColor="white" />
       </div>
       {/* search */}
-      <div className="w-full sm:-1/3 hidden sm:block">
+      <div className="w-full sm:w-1/3 hidden sm:block">
         <Search />
       </div>
       {/* search icon for small screen */}
@@ -63,7 +63,7 @@ const Navbar = () => {
       </div>
       {/* check if authenticated then image else login & sign button */}
       {authStatus ? (
-        <div className="rounded-full sm:block hidden">
+        <div className="rounded-full overflow-hidden sm:block hidden">
           <img
             src={profileImg}
             alt="profileImg"
@@ -137,7 +137,7 @@ const Navbar = () => {
                 </Link>
               </div>
             ) : (
-              <div className="flex gap-2 justify-start items-start py-1 px-2 border border-slate-600" onClick={() => logout()}>
+              <div className="flex gap-2 justify-start items-start py-1 px-2 border border-slate-600 text-black cursor-pointer hover:bg-[#ff0000] hover:text-white" onClick={() => logout()}>
                 <IoMdLogOut size={25}/>
                 <span className="text-base">Logout</span>
               </div>

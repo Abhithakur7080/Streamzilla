@@ -24,9 +24,6 @@ const VideosSkeleton = () => {
       <VideoCard />
       <VideoCard />
       <VideoCard />
-      <VideoCard />
-      <VideoCard />
-      <VideoCard />
     </div>
   );
 };
