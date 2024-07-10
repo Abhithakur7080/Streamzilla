@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Controller } from "react-hook-form";
-import { FaCamera } from "react-icons/fa";
+import { icons } from "../../assets";
 
 const GetImagePreview = ({
   name,
@@ -28,7 +28,7 @@ const GetImagePreview = ({
         {label && <label className="inline-block mb-2 pl-1">{label}</label>}
         <img src={preview || image} className={className} />
         {cameraIcon && (
-          <FaCamera
+          <icons.FaCamera
             size={cameraSize}
             className={`absolute justify-center items-center w-full ${
               preview ? "hidden group-hover:inline-flex" : "inline-block"

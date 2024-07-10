@@ -1,7 +1,7 @@
 import React, { useId } from "react";
 
 const Input2 = React.forwardRef(function Input2(
-  { label, type = "text", placeholder, className = "", ...props },
+  { label, type = "text", placeholder, error="", className = "", ...props },
   ref
 ) {
   const id = useId();
@@ -11,7 +11,9 @@ const Input2 = React.forwardRef(function Input2(
       <input
         type={type}
         placeholder={placeholder}
-        className={`px-3 py-2 bg-transparent text-black outline-none focus:bg-neutral-400 border border-slate-600 w-full ${className}`}
+        className={`px-3 py-2 bg-white text-black outline-none focus:bg-neutral-200 border border-slate-600 w-full ${className} ${
+          error ? "border-[#ff0000]" : "border-slate-600"
+        }`}
         {...props}
         ref={ref}
         id={id}

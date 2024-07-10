@@ -1,7 +1,7 @@
 import React from "react";
 import { Logo, Button } from "../index";
 import { Link } from "react-router-dom";
-import { CiLock } from "react-icons/ci";
+import { icons } from "../../assets";
 
 const LoginPopup = () => {
   return (
@@ -10,7 +10,7 @@ const LoginPopup = () => {
         <div className="flex flex-col gap-2 items-center mb-10">
             <Logo size={30}/>
         </div>
-        <p className="flex justify-center items-center font-extrabold mb-2"><CiLock size={50}/></p>
+        <p className="flex justify-center items-center font-extrabold mb-2"><icons.CiLock size={50}/></p>
         <p className="text-lg font-medium mb-2">Login or Signup to continue</p>
         <Link to={"/login"}>
             <Button className="bg-[#ff0000] hover:bg-[#ff2000] w-full py-2 px-4 font-bold text-lg rounded text-white shadow-inner">Login</Button>

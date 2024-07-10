@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { IoCloseCircleOutline } from "react-icons/io5";
+import { icons } from "../../assets";
 import { useNavigate } from "react-router-dom";
 import { Button, Input } from "../index";
 
@@ -18,7 +18,7 @@ const SearchForSmallScreen = ({ openSearch, setOpenSearch }) => {
         <div className="fixed inset-0 h-screen w-full bg-[#ff0000]  flex items-start justify-start slide-top">
           <div className="sm:p-8 p-4 relative w-full">
             <div className="absolute top-5 right-5 cursor-pointer">
-              <IoCloseCircleOutline
+              <icons.IoCloseCircleOutline
                 size={30}
                 onClick={() => setOpenSearch((prev) => !prev)}
               />

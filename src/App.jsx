@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import Layout from "./Layout";
-import { ToastContainer, cssTransition } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import "animate.css/animate.min.css";
+import "react-toastify/dist/ReactToastify.css";
+import { useDispatch } from "react-redux";
+import { AuthLayout } from "./components";
 import { Route, Routes } from "react-router-dom";
+import { getCurrentUser } from "./reducers/Slices/authSlice";
+import { ToastContainer, cssTransition } from "react-toastify";
 import {
   AdminDashboard,
   ChangePassword,
@@ -24,9 +27,6 @@ import {
   TermsAndConditions,
   VideoDetails,
 } from "./pages";
-import { AuthLayout } from "./components";
-import { useDispatch } from "react-redux";
-import { getCurrentUser } from "./reducers/Slices/authSlice";
 
 const bounce = cssTransition({
   enter: "animate__animated animate__bounceIn",

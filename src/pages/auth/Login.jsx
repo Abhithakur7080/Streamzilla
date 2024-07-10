@@ -1,10 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Button, Input, Logo } from "../../components";
 import { getCurrentUser, userLogin } from "../../reducers/Slices/authSlice";
 import LoginSkeleton from "../../skeletons/LoginSkeleton";
-import { Button, Input, Logo } from "../../components";
 
 const Login = () => {
   const {

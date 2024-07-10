@@ -3,12 +3,7 @@ import { Search, Button, Logo, SearchForSmallScreen } from "../index";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogout } from "../../reducers/Slices/authSlice";
-import { BiLike } from "react-icons/bi";
-import { HiOutlineVideoCamera } from "react-icons/hi";
-import { CiSearch } from "react-icons/ci";
-import { SlMenu } from "react-icons/sl";
-import { IoCloseCircleOutline } from "react-icons/io5";
-import { IoMdLogOut } from "react-icons/io";
+import { icons } from "../../assets";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -25,12 +20,12 @@ const Navbar = () => {
   };
   const sidePanelItems = [
     {
-      icon: <BiLike size={25} />,
+      icon: <icons.BiLike size={25} />,
       title: "Liked Videos",
       url: "/liked-videos",
     },
     {
-      icon: <HiOutlineVideoCamera size={25} />,
+      icon: <icons.HiOutlineVideoCamera size={25} />,
       title: "My Content",
       url: `/channel/${username}`,
     },
@@ -47,7 +42,7 @@ const Navbar = () => {
       </div>
       {/* search icon for small screen */}
       <div className="text-white w-full inline-flex justify-end sm:hidden pr-4">
-        <CiSearch
+        <icons.CiSearch
           size={30}
           fontWeight={"bold"}
           color="white"
@@ -87,7 +82,7 @@ const Navbar = () => {
       {/* hamburger for small screen icon */}
       <div className="sm:hidden block">
         <div className="text-white">
-          <SlMenu size={24} onClick={() => setToggleMenu((prev) => !prev)} />
+          <icons.SlMenu size={24} onClick={() => setToggleMenu((prev) => !prev)} />
         </div>
       </div>
       {/* sidebar for smaller screen */}
@@ -97,7 +92,7 @@ const Navbar = () => {
             <div className="flex items-center gap-2">
               <Logo />
             </div>
-            <IoCloseCircleOutline
+            <icons.IoCloseCircleOutline
               size={35}
               onClick={() => setToggleMenu((prev) => !prev)}
               color="#111"
@@ -137,8 +132,11 @@ const Navbar = () => {
                 </Link>
               </div>
             ) : (
-              <div className="flex gap-2 justify-start items-start py-1 px-2 border border-slate-600 text-black cursor-pointer hover:bg-[#ff0000] hover:text-white" onClick={() => logout()}>
-                <IoMdLogOut size={25}/>
+              <div
+                className="flex gap-2 justify-start items-start py-1 px-2 border border-slate-600 text-black cursor-pointer hover:bg-[#ff0000] hover:text-white"
+                onClick={() => logout()}
+              >
+                <icons.IoMdLogOut size={25} />
                 <span className="text-base">Logout</span>
               </div>
             )}

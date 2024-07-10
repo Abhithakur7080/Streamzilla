@@ -11,10 +11,10 @@ const Homepage = () => {
   const hasNextPage = useSelector((state) => state.video?.videos?.hasNextPage);
   const [page, setPage] = useState(1);
 
-  // useEffect(() => {
-  //   dispatch(getAllVideos());
-  //   return () => dispatch(makeVideosNull());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(getAllVideos({ userId:"", sortBy:"", sortType:"", query:"", page:"", limit:"" }));
+    return () => dispatch(makeVideosNull());
+  }, [dispatch]);
 
   const fetchMoreVideos = useCallback(() => {
     if (hasNextPage) {
@@ -22,17 +22,18 @@ const Homepage = () => {
       setPage((prev) => prev + 1);
     }
   }, [page, hasNextPage, dispatch]);
+  console.log(videos);
   return (
     <Container>
       <InfiniteScroll fetchMore={fetchMoreVideos} hasNextPage={hasNextPage}>
-        <div className=" mb-20 sm:m-0 max-h-screen w-full grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 overflow-y-scroll">
+        <div className=" mb-20 sm:m-0 max-h-screen w-full grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 overflow-y-auto">
           {videos?.map((video) => (
             <VideoList
               key={video._id}
               avatar={video.ownerDetails?.avatar.url}
               duration={video.duration}
               title={video.title}
-              thumnbnail={video.thumnbnail?.url}
+              thumbnail={video.thumbnail?.url}
               createdAt={video.createdAt}
               views={video.views}
               channelName={video.ownerDetails.username}

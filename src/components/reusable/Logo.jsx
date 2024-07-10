@@ -1,5 +1,5 @@
 import React from "react";
-import { IoLogoYoutube } from "react-icons/io";
+import { icons } from "../../assets";
 import { Link } from "react-router-dom";
 
 const Logo = ({
@@ -10,7 +10,7 @@ const Logo = ({
   return (
     <>
       <Link to={"/"} className="flex gap-2 items-center">
-        <IoLogoYoutube size={size} color={iconColor} />
+        <icons.IoLogoYoutube size={size} color={iconColor} />
         <span
           className={`font-extrabold text-${textColor} font-roboto tracking-widest`}
         >

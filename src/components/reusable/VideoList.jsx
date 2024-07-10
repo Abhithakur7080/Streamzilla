@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { formatDuration, timeAgo } from "../../utils/timeAgo";
 
 const VideoList = ({
-  thumnbnail,
+  thumbnail,
   duration,
   title,
   views = 0,
@@ -23,7 +23,7 @@ const VideoList = ({
       onClick={() => navigate(`/watch/${videoId}`)}
     >
       <div className="relative sm:h-60 h-48">
-        <img src={thumnbnail} className="object-cover w-full h-full" />
+        <img src={thumbnail} className="object-cover w-full h-full" />
         <span>{formatDuration(duration)}</span>
       </div>
       <div className="flex items-center py-2 px-2 gap-2">
@@ -35,14 +35,14 @@ const VideoList = ({
             />
           </div>
         )}
-        <div>
+        <div className="flex-1">
           <h2 className="font-medium">{title}</h2>
           <div className="text-xs space-x-1 text-slate-400">
             <span>{views} Views</span>
             <span>{timeAgo(createdAt)}</span>
           </div>
           {channelName && (
-            <h2 className="text-xs space-x-1 text-slate-200">{channelName}</h2>
+            <h2 className="text-xs space-x-1 text-slate-400">{channelName}</h2>
           )}
         </div>
       </div>

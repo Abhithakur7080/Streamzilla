@@ -3,6 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* body{
+  background-color: red;
+} */
 /* toaster css */
 .toast-success {
   border-radius: 0 !important;

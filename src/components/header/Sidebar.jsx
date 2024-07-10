@@ -1,14 +1,8 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { IoMdLogOut } from "react-icons/io";
 import { userLogout } from "../../reducers/Slices/authSlice";
-import { RiHome6Line } from "react-icons/ri";
-import { BiHistory, BiLike } from "react-icons/bi";
-import { HiOutlineVideoCamera } from "react-icons/hi";
-import { IoFolderOutline } from "react-icons/io5";
-import { TbUserCheck } from "react-icons/tb";
-import { CiSettings } from "react-icons/ci";
+import { icons } from "../../assets";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -17,32 +11,32 @@ const Sidebar = () => {
 
   const sidebarTopItems = [
     {
-      icon: <RiHome6Line size={25} />,
+      icon: <icons.RiHome6Line size={25} />,
       title: "Home",
       url: "/",
     },
     {
-      icon: <BiLike size={25} />,
+      icon: <icons.BiLike size={25} />,
       title: "Liked Videos",
       url: "/liked-videos",
     },
     {
-      icon: <BiHistory size={25} />,
+      icon: <icons.BiHistory size={25} />,
       title: "History",
       url: "/history",
     },
     {
-      icon: <HiOutlineVideoCamera size={25} />,
+      icon: <icons.HiOutlineVideoCamera size={25} />,
       title: "My Content",
       url: `/channel/${username}`,
     },
     {
-      icon: <IoFolderOutline size={25} />,
+      icon: <icons.IoFolderOutline size={25} />,
       title: "Collections",
       url: "/collections",
     },
     {
-      icon: <TbUserCheck size={25} />,
+      icon: <icons.TbUserCheck size={25} />,
       title: "Subscriptions",
       url: "/subscriptions",
     },
@@ -50,22 +44,22 @@ const Sidebar = () => {
 
   const bottomBarItems = [
     {
-      icon: <RiHome6Line size={25} />,
+      icon: <icons.RiHome6Line size={25} />,
       title: "Home",
       url: "/",
     },
     {
-      icon: <BiHistory size={25} />,
+      icon: <icons.BiHistory size={25} />,
       title: "History",
       url: "/history",
     },
     {
-      icon: <IoFolderOutline size={25} />,
+      icon: <icons.IoFolderOutline size={25} />,
       title: "Collections",
       url: "/collections",
     },
     {
-      icon: <TbUserCheck size={25} />,
+      icon: <icons.TbUserCheck size={25} />,
       title: "Subscriptions",
       url: "/subscriptions",
     },
@@ -104,12 +98,12 @@ const Sidebar = () => {
                 className="flex items-center gap-2 justify-center sm:justify-start hover:bg-[#ff0000] hover:text-white cursor-pointer py-1 px-2 border border-gray-400"
                 onClick={() => logout()}
               >
-                <IoMdLogOut size={25} />
+                <icons.IoMdLogOut size={25} />
                 <span className="text-base hidden md:block">Logout</span>
               </div>
             )}
             <div className="flex items-center gap-2 justify-center sm:justify-start hover:bg-[#ff0000] hover:text-white cursor-pointer py-1 px-2 border border-gray-400">
-              <CiSettings size={25} />
+              <icons.CiSettings size={25} />
               <span className="text-base hidden md:block">Settings</span>
             </div>
           </div>
@@ -120,9 +114,7 @@ const Sidebar = () => {
           <NavLink
             to={item.url}
             key={item.title}
-            className={({ isActive }) =>
-              isActive ? "text-[#ff0000]" : ""
-            }
+            className={({ isActive }) => (isActive ? "text-[#ff0000]" : "")}
           >
             <div className="flex flex-col items-center gap-1 cursor-pointer p-1">
               {item.icon}
