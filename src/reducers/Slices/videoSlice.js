@@ -17,8 +17,8 @@ const initialState = {
 
 export const getAllVideos = createAsyncThunk(
   "getAllVideos",
-  async ({ userId, sortBy, sortType, query, page, limit }) => {
-    console.log({ userId, sortBy, sortType, query, page, limit });
+  async (data = {}) => {
+    const { userId, sortBy, sortType, query, page, limit } = data;
     try {
       const url = new URL(`${BASE_URL}/video`);
       if (userId) url.searchParams.set("userId", userId);
@@ -171,6 +171,6 @@ const videoSlice = createSlice({
   },
 });
 
-export const { updateUploadState, makeVideosNull } = videoSlice.actions
+export const { updateUploadState, makeVideosNull } = videoSlice.actions;
 
-export default videoSlice.reducer
+export default videoSlice.reducer;

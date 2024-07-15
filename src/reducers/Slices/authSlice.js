@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axiosInstance from "../../utils/axiosInstance";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 
 const initialState = {
   loading: false,
@@ -108,10 +108,7 @@ export const updateCoverImage = createAsyncThunk(
   "updateCoverImage",
   async (coverImg) => {
     try {
-      const response = await axiosInstance.patch(
-        "/auth/cover-image",
-        coverImg
-      );
+      const response = await axiosInstance.patch("/auth/cover-image", coverImg);
       console.log(response.data);
       toast.success(response.data?.messege);
       return response.data;
@@ -191,4 +188,4 @@ const authSlice = createSlice({
   },
 });
 
-export default authSlice.reducer
+export default authSlice.reducer;

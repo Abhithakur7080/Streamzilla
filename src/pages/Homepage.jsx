@@ -12,7 +12,7 @@ const Homepage = () => {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    dispatch(getAllVideos({ userId:"", sortBy:"", sortType:"", query:"", page:"", limit:"" }));
+    dispatch(getAllVideos());
     return () => dispatch(makeVideosNull());
   }, [dispatch]);
 
