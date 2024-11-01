@@ -1,5 +1,5 @@
 import React from "react";
-import { TogglePublish } from "../index";
+import { TogglePublish } from "..";
 import { icons } from "../../assets";
 
 const VideoTable = ({ videos, setPopUp, setVideoDetails }) => {

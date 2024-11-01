@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Input2, UploadingVideo, GetImagePreview } from "../index";
+import { Button, Input2, UploadingVideo, GetImagePreview } from "..";
 import { icons } from "../../assets";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";

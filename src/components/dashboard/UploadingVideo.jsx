@@ -1,7 +1,7 @@
 import React from "react";
 import { icons } from "../../assets";
 import { useDispatch } from "react-redux";
-import { Spinner, Button } from "../index";
+import { Spinner, Button } from "..";
 import { updateUploadState } from "../../reducers/Slices/videoSlice";
 
 const UploadingVideo = ({

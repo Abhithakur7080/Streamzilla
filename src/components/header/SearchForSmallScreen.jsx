@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { icons } from "../../assets";
 import { useNavigate } from "react-router-dom";
-import { Button, Input } from "../index";
+import { Button, Input } from "..";
 
 const SearchForSmallScreen = ({ openSearch, setOpenSearch }) => {
   const { register, handleSubmit } = useForm();

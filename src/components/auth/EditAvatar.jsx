@@ -6,7 +6,7 @@ import {
   updateAvatar,
   updateCoverImage,
 } from "../../reducers/Slices/authSlice";
-import { GetImagePreview } from "../index";
+import { GetImagePreview } from "..";
 
 const EditAvatar = ({ cover, preImage }) => {
   const [isOpen, setIsOpen] = useState(false);

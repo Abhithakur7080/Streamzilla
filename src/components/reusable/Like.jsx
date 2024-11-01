@@ -48,10 +48,10 @@ const Like = ({
         <icons.BiSolidLike
           size={size}
           onClick={handleLikeToggle}
-          className={`cursor-pointer ${localIsLiked ? "text-[#ff0000]" : ""}`}
+          className={`cursor-pointer ${localIsLiked ? "text-[#ff0000]" : "text-white"}`}
         />
         <span className="text-xs mr-3">{localLikesCount}</span>
-        <icons.BiSolidDislike size={size} />
+        <icons.BiSolidDislike size={size} className="text-white" />
       </div>
     </>
   );

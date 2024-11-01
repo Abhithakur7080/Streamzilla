@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo, Button } from "../index";
+import { Logo, Button } from "..";
 import { Link } from "react-router-dom";
 import { icons } from "../../assets";
 

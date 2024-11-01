@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, EditAvatar } from "../index";
+import { Button, EditAvatar } from "..";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSubscription } from "../../reducers/Slices/subscriptionSlice";
 

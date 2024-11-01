@@ -22,7 +22,6 @@ const Homepage = () => {
       setPage((prev) => prev + 1);
     }
   }, [page, hasNextPage, dispatch]);
-  console.log(videos);
   return (
     <Container>
       <InfiniteScroll fetchMore={fetchMoreVideos} hasNextPage={hasNextPage}>

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Input2, Button, Spinner, GetImagePreview } from "../index";
+import { Input2, Button, Spinner, GetImagePreview } from "..";
 import { icons } from "../../assets";
 import { useDispatch, useSelector } from "react-redux";
 import {

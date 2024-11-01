@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { timeAgo } from "../../utils/timeAgo";
 import { useSelector, useDispatch } from "react-redux";
-import { Like, DeleteConfirmation, Edit } from "../index";
+import { Like, DeleteConfirmation, Edit } from "..";
 import { icons } from "../../assets";
 import {
   deleteAcomment,
@@ -74,7 +74,7 @@ const CommentList = ({
                   }
                 />
                 {editState.isOpen && (
-                  <div className="border bg-gray-600 text-lg border-slate-400 absolute text-center right-2 rounded-xl">
+                  <div className="border bg-gray-400 text-lg border-slate-400 absolute text-center right-2 rounded-md">
                     <ul>
                       <li
                         className="hover:opacity-50 px-5 cursor-pointer border-b border-slate-400"

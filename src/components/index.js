@@ -21,7 +21,6 @@ import Avatar from "./reusable/Avatar";
 import Edit from "./reusable/Edit";
 import Logo from "./reusable/Logo";
 import Like from "./reusable/Like";
-import Edit from "./reusable/Edit";
 import Input from "./reusable/Input";
 import Input2 from "./reusable/Input2";
 import Button from "./reusable/Button";

@@ -6,7 +6,7 @@ import axiosInstance from "../../utils/axiosInstance";
 const initialState = {
   loading: false,
   comments: [],
-  totalComments: null,
+  totalComments: "No",
   hasNextPage: false,
 };
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Search, Button, Logo, SearchForSmallScreen } from "../index";
+import { Search, Button, Logo, SearchForSmallScreen } from "..";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogout } from "../../reducers/Slices/authSlice";

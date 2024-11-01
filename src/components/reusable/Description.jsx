@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Like, Button } from "../index";
+import { Like, Button } from "..";
 import { useDispatch } from "react-redux";
 import { timeAgo } from "../../utils/timeAgo";
 import { toggleSubscription } from "../../reducers/Slices/subscriptionSlice";
@@ -46,7 +46,7 @@ const Description = ({
                   {timeAgo(createdAt)}
                 </span>
               </div>
-              <div className="rounded-full w-24 flex justify-center bg-gray-800 py-1">
+              <div className="rounded-full w-24 flex justify-center bg-gray-600 py-1">
                 <Like
                   isLiked={isLiked}
                   videoId={videoId}
