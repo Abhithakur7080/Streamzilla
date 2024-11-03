@@ -72,7 +72,7 @@ const Description = ({
                   </p>
                 </div>
               </Link>
-              <div onClick={handleSubscribe}>
+              <div>
                 <Button
                   onClick={handleSubscribe}
                   className="border-slate-500 hover:scale-110 transition-all text-white bg-[#ff0000] font-bold px-4 py-1"

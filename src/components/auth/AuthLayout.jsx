@@ -6,11 +6,13 @@ import { LoginPopup } from "..";
 const AuthLayout = ({ children, authentication }) => {
   const navigate = useNavigate();
   const authStatus = useSelector((state) => state.auth.status);
+
   useEffect(() => {
     if (!authentication && authStatus !== authentication) {
       return;
     }
   }, [authStatus, authentication, navigate]);
+  
   if (authentication && authStatus !== authentication) {
     return <LoginPopup />;
   }

@@ -30,7 +30,6 @@ export const getAllVideos = createAsyncThunk(
         url.searchParams.set("sortType", sortType);
       }
       const response = await axiosInstance.get(url);
-      console.log(response.data.data);
       return response.data.data;
     } catch (error) {
       toast.error(error?.response?.data?.messege);

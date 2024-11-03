@@ -24,8 +24,7 @@ export const getUserChannelProfile = createAsyncThunk(
 );
 export const getWatchHistory = createAsyncThunk("getWatchHistory", async () => {
   try {
-    const response = await axiosInstance.get("/user/watch-history");
-    console.log(response.data.data);
+    const response = await axiosInstance.get("/user/watch-history")
     toast.success(response.data?.messege);
     return response.data.data;
   } catch (error) {
@@ -45,13 +44,13 @@ const userSlice = createSlice({
         builder.addCase(getUserChannelProfile.fulfilled, (state, action) => {
             state.loading = false;
             state.profileData = action.payload
-        })
-        builder.addCase(getWatchHistory.pending, (state) => {
+          })
+          builder.addCase(getWatchHistory.pending, (state) => {
             state.loading = true
-        })
-        builder.addCase(getWatchHistory.fulfilled, (state, action) => {
+          })
+          builder.addCase(getWatchHistory.fulfilled, (state, action) => {
             state.loading = false;
-            state.profileData = action.payload
+            state.history = action.payload
         })
     }
 })

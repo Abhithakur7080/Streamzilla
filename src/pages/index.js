@@ -1,7 +1,7 @@
 import Homepage from "./Homepage";
 import SearchVideos from "./SearchVideos";
 import History from "./History";
-import Subscriptions from "./Subscriptions";
+import Subscriptions from "./MySubscriptions";
 import LikedVideos from "./LikedVideos";
 
 import EditChannel from "./EditChannel";
