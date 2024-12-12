@@ -25,7 +25,7 @@ const Homepage = () => {
   return (
     <Container>
       <InfiniteScroll fetchMore={fetchMoreVideos} hasNextPage={hasNextPage}>
-        <div className=" mb-20 sm:m-0 max-h-screen w-full grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 overflow-y-auto">
+        <div className=" mb-20 sm:m-0 max-h-[calc(100vh-100px)] w-full grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 overflow-y-auto">
           {videos?.map((video) => (
             <VideoList
               key={video._id}

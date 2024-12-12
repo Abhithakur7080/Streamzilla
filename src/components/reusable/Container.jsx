@@ -1,7 +1,7 @@
 import React from "react";
 
 const Container = ({ children }) => {
-  return <div className="w-full sm:px-2">{children}</div>;
+  return <div className="w-full sm:px-2 py-2">{children}</div>;
 };
 
 export default Container;

@@ -26,7 +26,7 @@ const TweetAndComment = ({ tweet, comment, videoId }) => {
       >
         <textarea
           placeholder={`${tweet ? "Write a tweet..." : "Add a Comment..."}`}
-          className="p-2 text-sm pr-16 focus:border-black text-black border border-slate-700 bg-slate-400 outline-none w-full resize-none placeholder:text-black"
+          className="p-2 text-sm pr-16 focus:border-black text-black border border-slate-700 bg-slate-100 outline-none w-full resize-none placeholder:text-black"
           {...register("content", {required: true})}
           rows={4}
         />

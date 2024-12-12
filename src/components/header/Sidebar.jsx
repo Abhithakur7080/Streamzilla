@@ -94,13 +94,28 @@ const Sidebar = () => {
           </div>
           <div className="space-y-4 mb-10">
             {username && (
+              <>
               <div
-                className="flex items-center gap-2 justify-center sm:justify-start hover:bg-[#ff0000] hover:text-white cursor-pointer py-1 px-2 border border-gray-400"
+                className="flex items-center gap-2 justify-center sm:justify-start hover:bg-[#ff0000] hover:text-white cursor-pointer py-1 px-2 border border-gray-400 mb-4"
                 onClick={() => logout()}
               >
                 <icons.IoMdLogOut size={25} />
                 <span className="text-base hidden md:block">Logout</span>
               </div>
+              <NavLink
+                to={"/terms&conditions"}
+                className={({ isActive }) =>
+                  isActive ? "bg-[#ff0000] text-white" : ""
+                }
+              >
+                <div className="flex items-center gap-2 justify-center sm:justify-start hover:bg-[#ff0000] hover:text-white cursor-pointer py-1 px-2 border border-gray-400">
+                  <icons.IoNewspaperOutline/>
+                  <span className="text-base hidden md:block">
+                    Terms and Conditions
+                  </span>
+                </div>
+              </NavLink>
+              </>
             )}
             <div className="flex items-center gap-2 justify-center sm:justify-start hover:bg-[#ff0000] hover:text-white cursor-pointer py-1 px-2 border border-gray-400">
               <icons.CiSettings size={25} />
@@ -109,7 +124,7 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      <div className="border-t-2 h-16 sm:hidden z-20 p-1 w-full flex justify-around fixed bottom-0 ">
+      <div className="border-t-2 h-16 sm:hidden z-20 p-1 w-full flex justify-around fixed bottom-0 bg-white ">
         {bottomBarItems.map((item) => (
           <NavLink
             to={item.url}

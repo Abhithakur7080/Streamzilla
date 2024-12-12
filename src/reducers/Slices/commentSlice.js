@@ -13,14 +13,14 @@ const initialState = {
 export const createAcomment = createAsyncThunk(
   "createAcomment",
   async ({ videoId, content }) => {
+
     try {
       const response = await axiosInstance.post(`/comment/${videoId}`, {
         content,
       });
-      toast.success(response?.data?.messege);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -32,10 +32,9 @@ export const editAcomment = createAsyncThunk(
       const response = await axiosInstance.patch(`/comment/c/${commentId}`, {
         content,
       });
-      toast.success(response?.data?.messege);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -45,10 +44,9 @@ export const deleteAcomment = createAsyncThunk(
   async (commentId) => {
     try {
       const response = await axiosInstance.delete(`/comment/c/${commentId}`);
-      toast.success(response?.data?.messege);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -61,10 +59,9 @@ export const getVideoComments = createAsyncThunk(
     if (limit) url.searchParams.set("limit", limit);
     try {
       const response = await axiosInstance.get(url);
-      toast.success(response?.data?.messege);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }

@@ -10,7 +10,7 @@ const Navbar = () => {
   const [openSearch, setOpenSearch] = useState(false);
   const authStatus = useSelector((state) => state.auth?.status);
   const username = useSelector((state) => state.auth?.userData?.username);
-  const profileImg = useSelector((state) => state.auth?.userData?.avatar.url);
+  const profileImg = useSelector((state) => state.auth?.userData?.avatar?.url);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -82,7 +82,10 @@ const Navbar = () => {
       {/* hamburger for small screen icon */}
       <div className="sm:hidden block">
         <div className="text-white">
-          <icons.SlMenu size={24} onClick={() => setToggleMenu((prev) => !prev)} />
+          <icons.SlMenu
+            size={24}
+            onClick={() => setToggleMenu((prev) => !prev)}
+          />
         </div>
       </div>
       {/* sidebar for smaller screen */}
@@ -132,12 +135,25 @@ const Navbar = () => {
                 </Link>
               </div>
             ) : (
-              <div
-                className="flex gap-2 justify-start items-start py-1 px-2 border border-slate-600 text-black cursor-pointer hover:bg-[#ff0000] hover:text-white"
-                onClick={() => logout()}
-              >
-                <icons.IoMdLogOut size={25} />
-                <span className="text-base">Logout</span>
+              <div className="flex flex-col gap-4">
+                <NavLink
+                  to={"/terms&conditions"}
+                  className={"mb-1"}
+                >
+                  <div className="flex gap-2 justify-start items-start py-1 px-2 border border-slate-600 text-black cursor-pointer hover:bg-[#ff0000] hover:text-white">
+                    <icons.IoNewspaperOutline size={25} />
+                    <span className="text-base">
+                      Terms & Conditions
+                    </span>
+                  </div>
+                </NavLink>
+                <div
+                  className="flex gap-2 justify-start items-start py-1 px-2 border border-slate-600 text-black cursor-pointer hover:bg-[#ff0000] hover:text-white "
+                  onClick={() => logout()}
+                >
+                  <icons.IoMdLogOut size={25} />
+                  <span className="text-base">Logout</span>
+                </div>
               </div>
             )}
           </div>

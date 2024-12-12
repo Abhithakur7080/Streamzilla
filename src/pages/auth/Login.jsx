@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Input, Logo } from "../../components";
 import { getCurrentUser, userLogin } from "../../reducers/Slices/authSlice";
@@ -15,6 +15,13 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.auth?.loading);
+  const user = useSelector((state) => state.auth?.userData);
+  //if user already logged in
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
   const submit = async (data) => {
     const isEmail = data.username.includes("@");
@@ -32,7 +39,7 @@ const Login = () => {
   }
   return (
     <div className="w-full h-screen text-white flex justify-center items-start bg-img">
-      <div className="flex my-auto h-fit md:max-w-5xl flex-col space-y-5 justify-center items-center md:border md:border-slate-300 p-3 shadow-inner bg-white">
+      <div className="flex my-auto h-fit md:max-w-5xl flex-col space-y-5 justify-center items-center md:border md:border-slate-300 p-3 shadow-inner bg-white scale-up-center">
         <div className="flex items-center gap-2 mt-8">
           <Logo />
         </div>
@@ -82,6 +89,7 @@ const Login = () => {
             >
               Login
             </Button>
+        <p className="text-sm text-black text-center mt-3">New User? <Link to={"/signup"}>Register</Link> here.</p>
           </div>
         </form>
       </div>

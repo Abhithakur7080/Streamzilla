@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createAccount, userLogin } from "../../reducers/Slices/authSlice";
 import LoginSkeleton from "../../skeletons/LoginSkeleton";
 import { Button, GetImagePreview, Input, Logo } from "../../components";
@@ -16,14 +16,22 @@ const Signup = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.auth?.loading);
+  const user = useSelector((state) => state.auth?.userData);
+  //if user already logged in
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
-  const submit = (data) => {
-    const response = dispatch(createAccount(data));
-    if (response?.payload?.success) {
+  const submit = async (data) => {
+    const response = await dispatch(createAccount(data));
+    if (response?.type === "register/fulfilled") {
       const username = data?.username;
       const password = data?.password;
-      const loginResult = dispatch(userLogin({ username, password }));
-      if (loginResult?.type === "login/fullfilled") {
+      const loginResult = await dispatch(userLogin({ username, password }));
+      console.log(loginResult?.type === "Login/fulfilled");
+      if (loginResult) {
         navigate("/terms&conditions");
       } else {
         navigate("/login");
@@ -35,7 +43,7 @@ const Signup = () => {
   }
   return (
     <div className="w-full h-screen text-black flex justify-center items-start bg-img">
-      <div className="w-fit sm:max-w-5xl flex flex-col p-3 space-y-2 justify-center items-center md:border md:border-gray-200 bg-white my-auto">
+      <div className="w-fit sm:max-w-5xl flex flex-col p-3 space-y-2 justify-center items-center md:border md:border-gray-200 bg-white my-auto scale-up-center">
         <div className="flex items-center gap-2">
           <Logo />
         </div>
@@ -74,7 +82,7 @@ const Signup = () => {
               label="Username"
               type="text"
               placeholder="Enter username"
-              error = {errors.username}
+              error={errors.username}
               {...register("username", {
                 required: "Username is required",
               })}
@@ -86,10 +94,25 @@ const Signup = () => {
           </div>
           <div>
             <Input
+              label="Full Name"
+              type="text"
+              placeholder="Enter full name"
+              error={errors.fullName}
+              {...register("fullName", {
+                required: "full name is required",
+              })}
+              className="h-8"
+            />
+            {errors.username && (
+              <span className="text-[#ff0000]">{errors.fullName.message}</span>
+            )}
+          </div>
+          <div>
+            <Input
               label="Email"
               type="text"
               placeholder="Enter email"
-              error = {errors.email}
+              error={errors.email}
               {...register("email", {
                 required: "Email is required",
               })}
@@ -104,7 +127,7 @@ const Signup = () => {
               label="Password"
               type="password"
               placeholder="Enter password"
-              error = {errors.password}
+              error={errors.password}
               {...register("password", {
                 required: "Password is required",
               })}
@@ -121,6 +144,9 @@ const Signup = () => {
           >
             Signup
           </Button>
+          <p className="text-sm text-black text-center mt-3">
+            Already have an account? <Link to={"/login"}>Login</Link> here.
+          </p>
         </form>
       </div>
     </div>

@@ -50,7 +50,6 @@ const AdminDashboard = () => {
 
   return (
     <>
-      <Navbar />
       <Container>
         <div className="w-full relative h-[calc(100vh - 100px)] bg-green text-black space-y-5 z-10 px-1">
           {popUp.uploadVideo && <UploadVideo setUploadVideoPopup={setPopUp} />}

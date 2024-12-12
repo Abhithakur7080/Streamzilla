@@ -38,7 +38,7 @@ const EditAvatar = ({ cover, preImage }) => {
           onClick={() => setIsOpen((prev) => !prev)}
         />
         {isOpen && (
-          <div className="fixed z-50 top-0 left-0 h-full justify-center items-center bg-gray-600 bg-opacity-70">
+          <div className="fixed z-50 top-0 left-0 w-full h-full flex justify-center items-center bg-gray-600 bg-opacity-70">
             <div className="bg-white p-8 relative border shadow-lg w-full max-w-md">
               <button className="absolute top-5 left-5 text-black hover:text-gray-800">
                 <icons.MdClose size={20} />

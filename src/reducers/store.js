@@ -9,7 +9,7 @@ import commentReducer from "./Slices/commentSlice";
 import playlistReducer from "./Slices/playlistSlice";
 import dashboardReducer from "./Slices/dashboardSlice";
 import subscriptionReducer from "./Slices/subscriptionSlice";
-
+import loggerMiddleware from "./middlewares/loggermiddleware";
 
 const store = configureStore({
   reducer: {
@@ -23,5 +23,7 @@ const store = configureStore({
     dashboard: dashboardReducer,
     subscription: subscriptionReducer,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(loggerMiddleware),
 });
+
 export default store;

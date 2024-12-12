@@ -12,10 +12,9 @@ export const toogleVideoLike = createAsyncThunk(
   async (videoId) => {
     try {
       const response = await axiosInstance.post(`/like/toggle/v/${videoId}`);
-      toast.success(response?.data?.messege);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -25,10 +24,9 @@ export const toogleCommentLike = createAsyncThunk(
   async (commentId) => {
     try {
       const response = await axiosInstance.post(`/like/toggle/c/${commentId}`);
-      toast.success(response?.data?.messege);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -38,10 +36,9 @@ export const toogleTweetLike = createAsyncThunk(
   async (tweetId) => {
     try {
       const response = await axiosInstance.post(`/like/toggle/t/${tweetId}`);
-      toast.success(response?.data?.messege);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -49,10 +46,9 @@ export const toogleTweetLike = createAsyncThunk(
 export const getLikedVideos = createAsyncThunk("getLikedVideos", async () => {
   try {
     const response = await axiosInstance.get(`/like/videos`);
-    toast.success(response?.data?.messege);
     return response.data.data;
   } catch (error) {
-    toast.error(error?.response?.data?.messege);
+    toast.error(error?.response?.data?.message);
     throw error;
   }
 });

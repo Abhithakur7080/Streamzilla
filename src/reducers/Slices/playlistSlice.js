@@ -15,10 +15,10 @@ export const createAplaylist = createAsyncThunk(
         name,
         description,
       });
-      toast.success(response?.data?.messege);
+      toast.success(response?.data?.message);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -30,10 +30,11 @@ export const addVideoToplaylist = createAsyncThunk(
       const response = await axiosInstance.patch(
         `/playlist/add/${videoId}/${playlistId}`
       );
-      toast.success(response?.data?.messege);
+      toast.success(response?.data?.message);
+      
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -45,10 +46,10 @@ export const removeVideoFromplaylist = createAsyncThunk(
       const response = await axiosInstance.patch(
         `/playlist/delete/${videoId}/${playlistId}`
       );
-      toast.success(response?.data?.messege);
+      toast.success(response?.data?.message);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -58,10 +59,9 @@ export const getPlaylistById = createAsyncThunk(
   async (playlistId) => {
     try {
       const response = await axiosInstance.get(`/playlist/${playlistId}`);
-      toast.success(response?.data?.messege);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -71,10 +71,9 @@ export const getUserPlaylists = createAsyncThunk(
   async (userId) => {
     try {
       const response = await axiosInstance.get(`/playlist/user/${userId}`);
-      toast.success(response?.data?.messege);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -87,10 +86,10 @@ export const updatePlaylist = createAsyncThunk(
         name,
         description,
       });
-      toast.success(response?.data?.messege);
+      toast.success(response?.data?.message);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -100,10 +99,10 @@ export const deletePlaylist = createAsyncThunk(
   async (playlistId) => {
     try {
       const response = await axiosInstance.delete(`/playlist/${playlistId}`);
-      toast.success(response?.data?.messege);
+      toast.success(response?.data?.message);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }

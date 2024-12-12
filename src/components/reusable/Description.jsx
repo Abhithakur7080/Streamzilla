@@ -46,7 +46,7 @@ const Description = ({
                   {timeAgo(createdAt)}
                 </span>
               </div>
-              <div className="rounded-full w-24 flex justify-center bg-gray-600 py-1">
+              <div className={`rounded-full w-24 flex justify-center bg-black py-1`}>
                 <Like
                   isLiked={isLiked}
                   videoId={videoId}

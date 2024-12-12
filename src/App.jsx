@@ -45,7 +45,7 @@ const App = () => {
           <Route
             index
             element={
-              <AuthLayout authentication={false}>
+              <AuthLayout authentication={true}>
                 <Homepage />
               </AuthLayout>
             }
@@ -128,7 +128,14 @@ const App = () => {
               </AuthLayout>
             }
           />
-
+                  <Route
+          path="/collections"
+          element={
+            <AuthLayout authentication>
+              <AdminDashboard />
+            </AuthLayout>
+          }
+        />
           <Route
             path="/edit"
             element={
@@ -159,17 +166,13 @@ const App = () => {
         <Route
           path="/login"
           element={
-            <AuthLayout authentication={false}>
               <Login />
-            </AuthLayout>
           }
         />
         <Route
           path="/signup"
           element={
-            <AuthLayout authentication={false}>
               <Signup />
-            </AuthLayout>
           }
         />
 
@@ -178,14 +181,6 @@ const App = () => {
           element={
             <AuthLayout authentication>
               <VideoDetails />
-            </AuthLayout>
-          }
-        />
-        <Route
-          path="/collections"
-          element={
-            <AuthLayout authentication>
-              <AdminDashboard />
             </AuthLayout>
           }
         />

@@ -92,7 +92,7 @@ const ChannelHeader = ({
                 </Button>
               </Link>
             )}
-            {user === userProfile && !edit && (
+            {user !== userProfile && !edit && (
               <Button
                 onClick={handleSubscribe}
                 className="border-slate-600 hover:scale-110 transition-all text-white px-4 py-1 bg-[#ff0000]"

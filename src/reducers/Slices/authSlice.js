@@ -3,7 +3,7 @@ import axiosInstance from "../../utils/axiosInstance";
 import { toast } from "react-toastify";
 
 const initialState = {
-  loading: false,
+  loading: true,
   status: false,
   userData: null,
 };
@@ -20,21 +20,20 @@ export const createAccount = createAsyncThunk("register", async (data) => {
   }
   try {
     const response = await axiosInstance.post("/auth/register", formData);
-    toast.success(response.data?.messege);
+    toast.success(response.data?.message);
     return response.data.data;
   } catch (error) {
-    console.log(error?.response);
-    toast.error(error?.response?.data?.messege);
+    toast.error(error?.response?.data?.message);
     throw error;
   }
 });
 export const userLogin = createAsyncThunk("login", async (data) => {
   try {
     const response = await axiosInstance.post("/auth/login", data);
-    toast.success(response.data?.messege);
+    console.log(response.data.data)
     return response.data.data;
   } catch (error) {
-    toast.error(error?.response?.data?.messege);
+    toast.error(error?.response?.data?.message);
     throw error;
   }
 });
@@ -43,7 +42,7 @@ export const userLogout = createAsyncThunk("logout", async () => {
     const response = await axiosInstance.post("/auth/logout");
     return response.data.data;
   } catch (error) {
-    toast.error(error?.response?.data?.messege);
+    toast.error(error?.response?.data?.message);
     throw error;
   }
 });
@@ -53,10 +52,9 @@ export const refreshAccessToken = createAsyncThunk(
   async (data) => {
     try {
       const response = await axiosInstance.post("/auth/refresh-token", data);
-      console.log(response.data);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -67,10 +65,10 @@ export const changePassword = createAsyncThunk(
     try {
       const response = await axiosInstance.post("/auth/change-password", data);
       console.log(response.data);
-      toast.success(response.data?.messege);
+      toast.success(response.data?.message);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -84,11 +82,10 @@ export const updateUserDetails = createAsyncThunk(
   async (data) => {
     try {
       const response = await axiosInstance.patch("/auth/update-account", data);
-      console.log(response.data);
-      toast.success(response.data?.messege);
+      toast.success(response.data?.message);
       return response.data.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -97,10 +94,10 @@ export const updateAvatar = createAsyncThunk("updateAvatar", async (avatar) => {
   try {
     const response = await axiosInstance.patch("/auth/avatar", avatar);
     console.log(response.data);
-    toast.success(response.data?.messege);
+    toast.success(response.data?.message);
     return response.data.data;
   } catch (error) {
-    toast.error(error?.response?.data?.messege);
+    toast.error(error?.response?.data?.message);
     throw error;
   }
 });
@@ -109,11 +106,10 @@ export const updateCoverImage = createAsyncThunk(
   async (coverImg) => {
     try {
       const response = await axiosInstance.patch("/auth/cover-image", coverImg);
-      console.log(response.data);
-      toast.success(response.data?.messege);
+      toast.success(response.data?.message);
       return response.data;
     } catch (error) {
-      toast.error(error?.response?.data?.messege);
+      toast.error(error?.response?.data?.message);
       throw error;
     }
   }
@@ -129,6 +125,9 @@ const authSlice = createSlice({
     builder.addCase(createAccount.fulfilled, (state) => {
       state.loading = false;
     });
+    builder.addCase(createAccount.rejected, (state) => {
+      state.loading = false
+    })
     builder.addCase(userLogin.pending, (state) => {
       state.loading = true;
     });
@@ -136,6 +135,9 @@ const authSlice = createSlice({
       state.loading = false;
       state.status = true;
       state.userData = action.payload;
+    });
+    builder.addCase(userLogin.rejected, (state) => {
+      state.loading = false;
     });
     builder.addCase(userLogout.pending, (state) => {
       state.loading = true;
@@ -164,6 +166,9 @@ const authSlice = createSlice({
     builder.addCase(updateUserDetails.fulfilled, (state, action) => {
       state.loading = false;
       state.userData = action.payload;
+    });
+    builder.addCase(updateUserDetails.rejected, (state) => {
+      state.loading = false;
     });
     builder.addCase(updateAvatar.pending, (state) => {
       state.loading = true;
