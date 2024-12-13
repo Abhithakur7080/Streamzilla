@@ -4,7 +4,7 @@ import { BASE_URL } from "../../constants";
 import axiosInstance from "../../utils/axiosInstance";
 
 const initialState = {
-  loading: true,
+  loading: false,
   uploading: false,
   uploaded: false,
   videos: {

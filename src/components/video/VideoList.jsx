@@ -22,9 +22,9 @@ const VideoList = ({
       className="w-full sm:p-2 cursor-pointer"
       onClick={() => navigate(`/watch/${videoId}`)}
     >
-      <div className="relative sm:h-60 h-48">
+      <div className="relative sm:h-60 h-48 bg">
         <img src={thumbnail} className="object-cover w-full h-full" />
-        <span>{formatDuration(duration)}</span>
+        <span className="absolute bottom-2 right-2 text-md">{formatDuration(duration)}</span>
       </div>
       <div className="flex items-center py-2 px-2 gap-2">
         {avatar && (

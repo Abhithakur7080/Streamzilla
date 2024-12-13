@@ -83,9 +83,9 @@ const Description = ({
             </div>
           </div>
         </div>
-        <p className="text-xs bg-gray-400 rounded-lg p-2 outline-none">
+        <pre className="text-xs bg-gray-200 rounded-lg p-2 outline-none">
           {description}
-        </p>
+        </pre>
       </section>
     </>
   );
