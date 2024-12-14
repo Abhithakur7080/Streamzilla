@@ -45,7 +45,7 @@ const App = () => {
           <Route
             index
             element={
-              <AuthLayout authentication={true}>
+              <AuthLayout authentication={false}>
                 <Homepage />
               </AuthLayout>
             }
