@@ -5,7 +5,7 @@ import { icons } from "../../assets";
 
 const LoginPopup = () => {
   return (
-    <div className="w-full h-full flex justify-center items-center bg-gray-500 opacity-75 z-50">
+    <div className="w-full h-full min-h-[80vh] flex justify-center items-center bg-gray-500 opacity-75 z-50 m-auto">
       <div className="bg-white shadow-md border border-slate-300 p-8 text-black text-center scale-up-center">
         <div className="flex flex-col gap-2 items-center mb-10">
           <Logo size={30} />
