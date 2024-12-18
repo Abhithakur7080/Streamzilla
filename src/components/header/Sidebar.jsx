@@ -124,12 +124,12 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      <div className="border-t-2 h-16 sm:hidden z-20 p-1 w-full flex justify-around fixed bottom-0 bg-purple-900 text-white">
+      <div className=" h-16 sm:hidden z-20 w-full flex justify-around fixed bottom-0 bg-purple-900 text-white p-1">
         {bottomBarItems.map((item) => (
           <NavLink
             to={item.url}
             key={item.title}
-            className={({ isActive }) => (isActive ? "text-purple-900" : "")}
+            className={({ isActive }) => (isActive ? "text-purple-900 bg-white px-2 rounded-md" : "")}
           >
             <div className="flex flex-col items-center gap-1 cursor-pointer p-1">
               {item.icon}

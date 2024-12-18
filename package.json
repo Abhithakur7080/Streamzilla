@@ -22,9 +22,10 @@
     "react-toastify": "^10.0.5"
   },
   "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.19",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^8.57.0",
