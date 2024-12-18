@@ -36,68 +36,9 @@ body{
   background: #222 !important;
 }
 
-/* background image css */
-.bg-img {
-  /* background-image: url(./assets/film_roll.jpg); */
-  background-image: url(./assets/movies-tiles.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-clip: border-box;
-}
-
 /* font for logo */
 .font-roboto {
   font-family: "Roboto", "sans-serif";
-}
-/* animations */
-.slide-left {
-  -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-@-webkit-keyframes slide-left {
-  0% {
-    -webkit-transform: translateX(200%);
-    transform: translateX(200%);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-@keyframes slide-left {
-  0% {
-    -webkit-transform: translateX(200%);
-    transform: translateX(200%);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-.slide-top {
-  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-@-webkit-keyframes slide-top {
-  0% {
-    -webkit-transform: translateY(-200%);
-    transform: translateY(-200%);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-@keyframes slide-top {
-  0% {
-    -webkit-transform: translateY(-200%);
-    transform: translateY(-200%);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
 }
 /* scale form animation */
 .scale-up-center {
@@ -125,3 +66,4 @@ body{
     transform: scale(1);
   }
 }
+

@@ -6,16 +6,19 @@ import {
   FaPlayCircle,
   FaFilter,
   FaRegHeart,
+  FaPlay,
+  FaPause
 } from "react-icons/fa";
 import { GrEdit, GrAnnounce } from "react-icons/gr";
 import { HiOutlineVideoCamera, HiOutlineDotsVertical } from "react-icons/hi";
 import { ImBin } from "react-icons/im";
 import { IoCloseCircleOutline, IoFolderOutline, IoNewspaperOutline, IoLogoPlaystation  } from "react-icons/io5";
-import { IoMdLogOut, IoLogoYoutube } from "react-icons/io";
+import { IoMdLogOut, IoLogoYoutube, IoMdDownload } from "react-icons/io";
 import {
   MdOutlineSlowMotionVideo,
   MdClose,
   MdOutlineCloudUpload,
+  MdOutlineFullscreen,
 } from "react-icons/md";
 import { PiClockCountdownFill, PiFilmReelFill } from "react-icons/pi";
 import { RiHome6Line } from "react-icons/ri";
@@ -37,6 +40,8 @@ export const icons = {
   FaRegHeart,
   FaPlayCircle,
   FaRegEye,
+  FaPlay,
+  FaPause,
   GrAnnounce,
   GrEdit,
   HiOutlineDotsVertical,
@@ -48,9 +53,11 @@ export const icons = {
   IoNewspaperOutline,
   IoLogoYoutube,
   IoMdLogOut,
+  IoMdDownload,
   MdClose,
   MdOutlineSlowMotionVideo,
   MdOutlineCloudUpload,
+  MdOutlineFullscreen,
   PiClockCountdownFill,
   PiFilmReelFill,
   RiHome6Line,
