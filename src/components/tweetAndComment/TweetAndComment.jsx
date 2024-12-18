@@ -30,7 +30,7 @@ const TweetAndComment = ({ tweet, comment, videoId }) => {
           {...register("content", {required: true})}
           rows={4}
         />
-        <Button type="submit" className="bg-[#ff0000] px-2 py-1 text-white hover:scale-110 transition-all ease-in absolute sm:bottom-10 sm:right-8 right-6 bottom-8 text-xs sm:text-base">Send</Button>
+        <Button type="submit" className="bg-purple-900 px-2 py-1 text-white hover:scale-110 transition-all ease-in absolute sm:bottom-10 sm:right-8 right-6 bottom-8 text-xs sm:text-base">Send</Button>
       </form>
     </>
   );

@@ -20,16 +20,16 @@ const UploadingVideo = ({
   };
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-500 bg-opacity-70 z-50">
-        <div className="w-96 p-3 text-black border outline-none rounded-lg space-y-5 border-slate-700 bg-white">
-          <div className="flex items-start justify-between">
+      <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-900 bg-opacity-70 z-50">
+        <div className="w-96 text-black border outline-none rounded-lg space-y-5 border-slate-700 bg-white">
+          <div className="flex items-start justify-between bg-purple-700 text-white p-3">
             <div>
               {uploaded ? (
                 <h1 className="text-lg font-bold">Uploaded Video</h1>
               ) : (
                 <h1 className="text-lg font-bold">Uploading Video...</h1>
               )}
-              <span className="text-xs text-slate-400">
+              <span className="text-xs text-slate-200">
                 Track your video uploading process.
               </span>
             </div>
@@ -39,9 +39,9 @@ const UploadingVideo = ({
               onClick={handleCancelAndFinish}
             />
           </div>
-          <div className="border flex justify-start items-center p-1">
+          <div className="border flex justify-start items-center p-3">
             <div className="mr-2">
-              <icons.PiFilmReelFill size={25} className="text-[#ff0000]" />
+              <icons.PiFilmReelFill size={25} className="text-purple-900" />
             </div>
             <div>
               <h1 className="text-sm font-semibold">{videoFileName}</h1>
@@ -50,7 +50,7 @@ const UploadingVideo = ({
                 {uploaded ? (
                   <>
                     <span className="text-xs flex items-center">
-                      <icons.TiTick size={25} className="text-[#ff0000]" />
+                      <icons.TiTick size={25} className="text-green-700" />
                       Uploaded Successfully
                     </span>
                   </>
@@ -63,15 +63,16 @@ const UploadingVideo = ({
               </div>
             </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 p-3">
             <Button
               className="border border-slate-500 flex-1 p-2"
               onClick={handleCancelAndFinish}
+              disabled={uploaded}
             >
               Cancel
             </Button>
             <Button
-              className="bg-[#ff0000] text-white flex-1 p-2"
+              className="bg-purple-900 hover:bg-purple-700 text-white flex-1 p-2"
               onClick={handleCancelAndFinish}
             >
               Finish

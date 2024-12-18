@@ -3,20 +3,18 @@ import Layout from "./Layout";
 import "animate.css/animate.min.css";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
-import { AuthLayout } from "./components";
+import { AuthLayout, EditPersonalInfo, ChangePassword } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { getCurrentUser } from "./reducers/Slices/authSlice";
 import { ToastContainer, cssTransition } from "react-toastify";
 import {
   AdminDashboard,
-  ChangePassword,
   Channel,
   ChannelPlaylists,
   ChannelSubscribers,
   ChannelTweets,
   ChannelVideos,
   EditChannel,
-  EditPersonalInfo,
   History,
   Homepage,
   LikedVideos,
@@ -128,14 +126,14 @@ const App = () => {
               </AuthLayout>
             }
           />
-                  <Route
-          path="/collections"
-          element={
-            <AuthLayout authentication>
-              <AdminDashboard />
-            </AuthLayout>
-          }
-        />
+          <Route
+            path="/collections"
+            element={
+              <AuthLayout authentication>
+                <AdminDashboard />
+              </AuthLayout>
+            }
+          />
           <Route
             path="/edit"
             element={
@@ -163,18 +161,8 @@ const App = () => {
           </Route>
         </Route>
 
-        <Route
-          path="/login"
-          element={
-              <Login />
-          }
-        />
-        <Route
-          path="/signup"
-          element={
-              <Signup />
-          }
-        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
 
         <Route
           path="/watch/:videoId"

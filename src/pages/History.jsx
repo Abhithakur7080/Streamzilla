@@ -21,7 +21,7 @@ const History = () => {
   return <>
   <Container>
 
-    <div className="grid max-h-screen mb-20 sm:m-0 overflow-y-auto lg:grid-cols-3 sm:grid-cols-2 text-black">
+    <div className="grid max-h-screen mb-20 sm:m-0 overflow-y-auto lg:grid-cols-3 sm:grid-cols-2 text-black p-3">
       {videos.map((video) => (
         <VideoList
           key={video._id}

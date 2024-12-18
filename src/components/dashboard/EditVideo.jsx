@@ -31,6 +31,7 @@ const EditVideo = ({
       editVideo: false,
     }));
   };
+  console.log(thumbnail)
   const updateVideo = async (data) => {
     await dispatch(updateAvideo({ videoId, data }));
     setEditVideoPop((prev) => ({
@@ -46,6 +47,12 @@ const EditVideo = ({
     setValue("description", description);
   }, [title, description, setValue]);
 
+  const handleOutsideClick = (e) => {
+    if (e.target.classList.contains("backdrop")) {
+      handleClosePopup();
+    }
+  };
+
   if (uploading) {
     return (
       <>
@@ -57,12 +64,12 @@ const EditVideo = ({
     );
   }
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-500 bg-opacity-70 z-50">
+    <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-900 bg-opacity-70 z-50 backdrop" onClick={handleOutsideClick}>
       <form
         onSubmit={handleSubmit(updateVideo)}
-        className="space-y-2 border h-[30rem] overflow-y-auto outline-none p-2 bg-white shadow-md scale-up-center"
+        className="space-y-2 h-[30rem] overflow-y-auto outline-none bg-white shadow-md scale-up-center"
       >
-        <div className="sticky left-0 top-0 z-50 flex justify-between items-center border-b border-slate-500 px-3 py-1">
+        <div className="sticky left-0 top-0 z-50 flex justify-between items-center bg-purple-600 text-white border-b border-slate-500 px-3 py-1">
           <div>
             <h2 className="font-bold">Edit Video</h2>
             <p className="text-xs mb-2">
@@ -75,7 +82,7 @@ const EditVideo = ({
             className="cursor-pointer"
           />
         </div>
-        <div className="p-2 grid lg:grid-cols-2 grid-cols-1 gap-5 z-40">
+        <div className="px-4 py-2 grid lg:grid-cols-2 grid-cols-1 gap-5 z-40">
           <div>
             <GetImagePreview
               name={"thumbnail"}
@@ -122,7 +129,7 @@ const EditVideo = ({
                 Cancel
               </Button>
               <Button
-                className="flex-1 bg-[#ff0000] p-2 font-bold text-white"
+                className="flex-1 bg-purple-900 hover:bg-purple-700 p-2 font-bold text-white"
                 onClick={handleClosePopup}
               >
                 Update

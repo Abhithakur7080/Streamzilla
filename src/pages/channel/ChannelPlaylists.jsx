@@ -31,9 +31,9 @@ const ChannelPlaylists = () => {
     setOpenCreatePlaylist((prev) => !prev);
   };
   return (
-    <div className="w-full relative text-black sm:px-5 px-0">
+    <div className="w-full relative text-white sm:px-5 px-0">
       {playlists?.length === 0 && (
-        <div className="w-full h-full flex justify-center items-center">
+        <div className="w-full h-full flex justify-center items-center text-white">
           <h1>No Playlists Found</h1>
         </div>
       )}
@@ -41,7 +41,7 @@ const ChannelPlaylists = () => {
         <div className="w-full flex justify-center mt-5">
           <Button
             onClick={() => setOpenCreatePlaylist((prev) => !prev)}
-            className="bg-[#ff0000] text-white py-1 px-3 rounded-lg hover:bg-[#ff1000] cursor-pointer"
+            className="bg-purple-900 text-white py-1 px-3 rounded-lg hover:bg-purple-800 cursor-pointer"
           >
             Create Playlist
           </Button>
@@ -86,7 +86,7 @@ const ChannelPlaylists = () => {
               )}
               <Button
                 type="submit"
-                className="bg-[#ff0000] text-white p-2 w-full hover:bg-[#ff1000] cursor-pointer"
+                className="bg-purple-900 text-white p-2 w-full hover:bg-purple-800 cursor-pointer"
               >
                 Create Playlist
               </Button>
@@ -99,7 +99,7 @@ const ChannelPlaylists = () => {
           <Link
             to={`/playlists/${playlist._id}`}
             key={playlist._id}
-            className="relative h-[15rem] w-full border border-slate-900"
+            className="relative h-[15rem] w-full border border-gray-50"
           >
             <div className="absolute flex justify-between bottom-0 border-t py-1 px-2 w-full backdrop-contrast-75">
               <div className="flex flex-col gap-1">

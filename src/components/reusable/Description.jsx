@@ -35,18 +35,18 @@ const Description = ({
   };
   return (
     <>
-      <section className="sm:max-w-4xl w-full text-black sm:p-5 p-2 space-y-2">
-        <div className="border-b border-slate-700">
+      <section className="sm:max-w-4xl w-full text-white sm:p-5 p-2 space-y-2">
+        <div className="border-b border-slate-300">
           <div className="space-y-2 mb-2">
             <h1 className="sm:text-2xl font-semibold">{title}</h1>
             <div className="flex items-center justify-between sm:justify-start sm:gap-5">
               <div>
-                <span className="text-sm text-slate-700">{views} views .</span>
-                <span className="text-sm text-slate-700">
+                <span className="text-sm text-slate-300">{views} views .</span>
+                <span className="text-sm text-slate-300">
                   {timeAgo(createdAt)}
                 </span>
               </div>
-              <div className={`rounded-full w-24 flex justify-center bg-black py-1`}>
+              <div className={`rounded-full w-24 flex justify-center bg-gray-700 py-1`}>
                 <Like
                   isLiked={isLiked}
                   videoId={videoId}
@@ -75,7 +75,7 @@ const Description = ({
               <div>
                 <Button
                   onClick={handleSubscribe}
-                  className="border-slate-500 hover:scale-110 transition-all text-white bg-[#ff0000] font-bold px-4 py-1"
+                  className="border-slate-50 transition-all text-white bg-purple-900 font-bold px-4 py-1"
                 >
                   {localIsSubscribed ? "Subscribed" : "Subscribe"}
                 </Button>
@@ -83,7 +83,7 @@ const Description = ({
             </div>
           </div>
         </div>
-        <pre className="text-xs bg-gray-200 rounded-lg p-2 outline-none">
+        <pre className="text-xs bg-gray-800 text-white rounded-lg p-2 outline-none">
           {description}
         </pre>
       </section>

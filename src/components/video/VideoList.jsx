@@ -24,7 +24,7 @@ const VideoList = ({
     >
       <div className="relative sm:h-60 h-48 bg">
         <img src={thumbnail} className="object-cover w-full h-full" />
-        <span className="absolute bottom-2 right-2 text-md">{formatDuration(duration)}</span>
+        <span className="absolute bottom-2 right-2 text-md bg-purple-900 px-2 rounded-lg text-white py-0.5">{formatDuration(duration)}</span>
       </div>
       <div className="flex items-center py-2 px-2 gap-2">
         {avatar && (
@@ -36,7 +36,7 @@ const VideoList = ({
           </div>
         )}
         <div className="flex-1">
-          <h2 className="font-medium">{title}</h2>
+          <h2 className="font-medium text-white">{title}</h2>
           <div className="text-xs space-x-1 text-slate-400">
             <span>{views} Views</span>
             <span>{timeAgo(createdAt)}</span>

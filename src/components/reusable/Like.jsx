@@ -18,6 +18,7 @@ const Like = ({
   const dispatch = useDispatch();
   const [localIsLiked, setLocalIsLiked] = useState(isLiked);
   const [localLikesCount, setLocalLikesCount] = useState(likesCount);
+  
 
   const handleLikeToggle = () => {
     if (localIsLiked) {
@@ -48,7 +49,7 @@ const Like = ({
         <icons.BiSolidLike
           size={size}
           onClick={handleLikeToggle}
-          className={`cursor-pointer ${localIsLiked ? "text-[#ff0000]" : "text-white"}`}
+          className={`cursor-pointer ${localIsLiked ? "text-purple-900" : "text-white"}`}
         />
         <span className="text-xs mr-3 text-white">{localLikesCount}</span>
         <icons.BiSolidDislike size={size} className="text-white" />

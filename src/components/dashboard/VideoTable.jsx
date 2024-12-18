@@ -5,20 +5,20 @@ import { icons } from "../../assets";
 const VideoTable = ({ videos, setPopUp, setVideoDetails }) => {
   return (
     <>
-      <section className="mx-auto w-full overflow-x-auto">
+      <section className="mx-auto w-full overflow-x-auto bg-gray-900">
         <table className="min-w-full border-slate-500">
           <thead>
-            <tr>
-              <th className="py-2 px-4 border-b border-slate-500">
+            <tr className="text-white">
+              <th className="py-2 px-4 border-b border-slate-300">
                 Toggle Publish
               </th>
-              <th className="py-2 px-4 border-b border-slate-500">Status</th>
-              <th className="py-2 px-4 border-b border-slate-500">Uploaded</th>
-              <th className="py-2 px-4 border-b border-slate-500">Rating</th>
-              <th className="py-2 px-4 border-b border-slate-500">
+              <th className="py-2 px-4 border-b border-slate-300">Status</th>
+              <th className="py-2 px-4 border-b border-slate-300">Uploaded</th>
+              <th className="py-2 px-4 border-b border-slate-300">Rating</th>
+              <th className="py-2 px-4 border-b border-slate-300">
                 Date Uploaded
               </th>
-              <th className="py-2 px-4 border-b border-slate-500"></th>
+              <th className="py-2 px-4 border-b border-slate-300"></th>
             </tr>
           </thead>
           <tbody className="text-center">
@@ -41,7 +41,7 @@ const VideoTable = ({ videos, setPopUp, setVideoDetails }) => {
                     </span>
                   )}
                 </td>
-                <td className="py-2 px-4 border-b border-slate-500">
+                <td className="py-2 px-4 border-b border-slate-300 text-white">
                   {video?.title}
                 </td>
                 <td className="border-b border-slate-500">
@@ -49,7 +49,7 @@ const VideoTable = ({ videos, setPopUp, setVideoDetails }) => {
                     {video?.likesCount} likes
                   </span>
                 </td>
-                <td className="py-2 px-4 border-b border-slate-500">
+                <td className="py-2 px-4 border-b border-slate-500 text-white">
                   {video?.createdAt?.day}/{video?.createdAt?.month}/
                   {video?.createdAt?.year}
                 </td>
@@ -57,7 +57,7 @@ const VideoTable = ({ videos, setPopUp, setVideoDetails }) => {
                   <span className="flex gap-3 justify-start">
                     <icons.ImBin
                       size={20}
-                      className="cursor-pointer hover:text-[#ff0000]"
+                      className="cursor-pointer text-red-700 hover:text-white"
                       onClick={() => {
                         setPopUp((prev) => ({
                           ...prev,
@@ -68,7 +68,7 @@ const VideoTable = ({ videos, setPopUp, setVideoDetails }) => {
                     />
                     <icons.GrEdit
                       size={20}
-                      className="cursor-pointer hover:text-[#ff0000]"
+                      className="cursor-pointer text-blue-500 hover:text-white"
                       onClick={() => {
                         setPopUp((prev) => ({
                           ...prev,

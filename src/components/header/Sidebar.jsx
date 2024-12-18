@@ -73,17 +73,17 @@ const Sidebar = () => {
   return (
     <>
       <div className="sm:block hidden">
-        <div className="lg:w-56 md:w-44 w-16 sm:p-3 p-2 border-slate-600 border-r h-[calc(100vh-75px)] flex flex-col justify-between">
+        <div className="lg:w-56 md:w-44 w-16 sm:p-3 p-2 border-slate-600 border-r h-[calc(100vh-75px)] flex flex-col justify-between bg-gray-900">
           <div className="flex flex-col gap-4 mt-5">
             {sidebarTopItems.map((item) => (
               <NavLink
                 to={item.url}
                 key={item.title}
                 className={({ isActive }) =>
-                  isActive ? "bg-[#ff0000] text-white" : ""
+                  isActive ? "bg-purple-900 text-white" : ""
                 }
               >
-                <div className="flex items-center gap-2 justify-center sm:justify-start hover:bg-[#ff0000] hover:text-white cursor-pointer py-1 px-2 border border-gray-400">
+                <div className="flex items-center gap-2 justify-center sm:justify-start hover:bg-purple-900 hover:text-white cursor-pointer py-1 px-2 border border-gray-400 text-white">
                   {item.icon}
                   <span className="text-base hidden md:block">
                     {item.title}
@@ -96,7 +96,7 @@ const Sidebar = () => {
             {username && (
               <>
               <div
-                className="flex items-center gap-2 justify-center sm:justify-start hover:bg-[#ff0000] hover:text-white cursor-pointer py-1 px-2 border border-gray-400 mb-4"
+                className="flex items-center gap-2 justify-center sm:justify-start hover:bg-purple-900 hover:text-white cursor-pointer py-1 px-2 border border-gray-400 mb-4 text-white"
                 onClick={() => logout()}
               >
                 <icons.IoMdLogOut size={25} />
@@ -105,10 +105,10 @@ const Sidebar = () => {
               <NavLink
                 to={"/terms&conditions"}
                 className={({ isActive }) =>
-                  isActive ? "bg-[#ff0000] text-white" : ""
+                  isActive ? "bg-purple-900 text-white" : ""
                 }
               >
-                <div className="flex items-center gap-2 justify-center sm:justify-start hover:bg-[#ff0000] hover:text-white cursor-pointer py-1 px-2 border border-gray-400">
+                <div className="flex items-center gap-2 justify-center sm:justify-start hover:bg-purple-900 hover:text-white cursor-pointer py-1 px-2 border border-gray-400 text-white">
                   <icons.IoNewspaperOutline/>
                   <span className="text-base hidden md:block">
                     Terms and Conditions
@@ -117,19 +117,19 @@ const Sidebar = () => {
               </NavLink>
               </>
             )}
-            <div className="flex items-center gap-2 justify-center sm:justify-start hover:bg-[#ff0000] hover:text-white cursor-pointer py-1 px-2 border border-gray-400">
+            <div className="flex items-center gap-2 justify-center sm:justify-start hover:bg-purple-900 hover:text-white cursor-pointer py-1 px-2 border border-gray-400 text-white">
               <icons.CiSettings size={25} />
               <span className="text-base hidden md:block">Settings</span>
             </div>
           </div>
         </div>
       </div>
-      <div className="border-t-2 h-16 sm:hidden z-20 p-1 w-full flex justify-around fixed bottom-0 bg-white ">
+      <div className="border-t-2 h-16 sm:hidden z-20 p-1 w-full flex justify-around fixed bottom-0 bg-purple-900 text-white">
         {bottomBarItems.map((item) => (
           <NavLink
             to={item.url}
             key={item.title}
-            className={({ isActive }) => (isActive ? "text-[#ff0000]" : "")}
+            className={({ isActive }) => (isActive ? "text-purple-900" : "")}
           >
             <div className="flex flex-col items-center gap-1 cursor-pointer p-1">
               {item.icon}

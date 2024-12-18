@@ -10,7 +10,7 @@ import {
 import { GrEdit, GrAnnounce } from "react-icons/gr";
 import { HiOutlineVideoCamera, HiOutlineDotsVertical } from "react-icons/hi";
 import { ImBin } from "react-icons/im";
-import { IoCloseCircleOutline, IoFolderOutline, IoNewspaperOutline  } from "react-icons/io5";
+import { IoCloseCircleOutline, IoFolderOutline, IoNewspaperOutline, IoLogoPlaystation  } from "react-icons/io5";
 import { IoMdLogOut, IoLogoYoutube } from "react-icons/io";
 import {
   MdOutlineSlowMotionVideo,
@@ -44,6 +44,7 @@ export const icons = {
   ImBin,
   IoCloseCircleOutline,
   IoFolderOutline,
+  IoLogoPlaystation,
   IoNewspaperOutline,
   IoLogoYoutube,
   IoMdLogOut,

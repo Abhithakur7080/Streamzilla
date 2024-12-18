@@ -5,8 +5,6 @@ import Subscriptions from "./MySubscriptions";
 import LikedVideos from "./LikedVideos";
 
 import EditChannel from "./EditChannel";
-import EditPersonalInfo from "./auth/EditPersonalInfo";
-import ChangePassword from "./auth/ChangePassword";
 
 import Channel from "./channel/Channel";
 import ChannelPlaylists from "./channel/ChannelPlaylists";
@@ -28,8 +26,6 @@ export {
   Subscriptions,
   LikedVideos,
   EditChannel,
-  EditPersonalInfo,
-  ChangePassword,
   Channel,
   ChannelPlaylists,
   ChannelSubscribers,

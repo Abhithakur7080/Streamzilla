@@ -8,7 +8,7 @@ const Video = ({ src, poster }) => {
       poster={poster}
       autoPlay
       playsInline
-      className="sm:h-[68vh] sm:max-w-4xl h-64 w-full object-contain"
+      className="sm:h-[68vh] sm:max-w-4xl h-64 w-full object-contain px-3 py-5"
     ></video>
   );
 };

@@ -22,7 +22,7 @@ const ChannelSubscribers = () => {
         <Link
           to={`/profile/${subscriber?.subscriber?.username}`}
           key={subscriber?.subscriber?._id}
-          className="flex border-b border-slate-900 px-3 py-1 justify-between items-center text-black"
+          className="flex border-b border-slate-900 px-3 py-1 justify-between items-center text-white"
         >
           <div className="flex items-center gap-3">
             <Avatar
@@ -37,7 +37,7 @@ const ChannelSubscribers = () => {
             </div>
           </div>
           <div>
-            <Button className="bg-[#ff0000] hover:bg-[#ff1000] text-white text-xs py-1 px-2">
+            <Button className="bg-purple-900 hover:bg-purple-900 text-white text-xs py-1 px-2">
               {subscriber?.subscriber?.subscribedToSubscriber
                 ? "Subscribed"
                 : "Subscribe"}

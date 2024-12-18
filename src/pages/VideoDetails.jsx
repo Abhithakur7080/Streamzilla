@@ -10,6 +10,7 @@ import {
   Spinner,
   InfiniteScroll,
   Navbar,
+  Container
 } from "../components";
 import {
   cleanUpComments,
@@ -41,6 +42,7 @@ const VideoDetails = () => {
   }, [page, loading, hasNextPage, dispatch, videoId]);
   return (
     <>
+      <Container>
       <Navbar />
       <Video src={video?.videoFile?.url} poster={video?.thumbnail?.url} />
       <Description
@@ -58,7 +60,7 @@ const VideoDetails = () => {
         videoId={video?._id}
         channelId={video?.owner?._id}
       />
-      <div className="text-black font-semibold sm:px-5 px-3">
+      <div className="text-white font-semibold sm:px-5 px-3">
         {totalComments} Comments
       </div>
       <TweetAndComment comment={true} videoId={video?._id} />
@@ -84,6 +86,7 @@ const VideoDetails = () => {
           )}
         </div>
       </InfiniteScroll>
+      </Container>
     </>
   );
 };

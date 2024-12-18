@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { timeAgo } from "../../utils/timeAgo";
 import { Like, DeleteConfirmation, Edit } from "..";
@@ -27,6 +27,22 @@ const TweetList = ({
     isOpen: false,
     delete: false,
   });
+
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setEditState((prev) => ({ ...prev, isOpen: false }));
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
   const handleEditTweet = (editedContent) => {
     dispatch(editTweet({ tweetId, content: editedContent }));
     setEditState((prev) => ({
@@ -37,6 +53,7 @@ const TweetList = ({
       editedContent,
     }));
   };
+
   const handleDeleteTweet = () => {
     dispatch(deleteTweet(tweetId));
     setEditState((prev) => ({
@@ -46,19 +63,21 @@ const TweetList = ({
       delete: false,
     }));
   };
+
   return (
     <>
-      <div className="text-black w-full flex justify-start items-center sm:gap-5 gap-3 border-b border-slate-600 p-3 sm:p-5">
+      <div className="w-full flex justify-start items-center sm:gap-5 gap-3 border-b border-slate-600 p-3 sm:p-5">
         <div className="w-10">
           <img
             src={avatar || avatar2}
-            alt="w-8 h-8 object-cover rounded-full"
+            alt="avatar"
+            className="w-8 h-8 object-cover rounded-full"
           />
         </div>
-        <div className="w-full flex flex-col gap-1 relative">
+        <div className="w-full flex flex-col gap-1 relative text-white">
           <div className="flex items-center gap-2">
-            <h2 className="text-xs">{username}</h2>
-            <span className="text-xs text-slate-400">{timeAgo(createdAt)}</span>
+            <h2 className="text-xs text-white">{username}</h2>
+            <span className="text-xs text-slate-300">{timeAgo(createdAt)}</span>
           </div>
           {editState.editing ? (
             <Edit
@@ -75,12 +94,12 @@ const TweetList = ({
           ) : (
             editState.editedContent
           )}
-            <Like
-              isLiked={isLiked}
-              likesCount={likesCount}
-              tweetId={tweetId}
-              size={20}
-            />
+          <Like
+            isLiked={isLiked}
+            likesCount={likesCount}
+            tweetId={tweetId}
+            size={20}
+          />
           {authUsername === username && (
             <div className="w-5 h-5 absolute right-0 cursor-pointer">
               <icons.HiOutlineDotsVertical
@@ -91,10 +110,13 @@ const TweetList = ({
             </div>
           )}
           {editState.isOpen && (
-            <div className="border bg-gray-200 border-slate-400 absolute text-center right-5 rounded-md">
+            <div
+              ref={dropdownRef}
+              className="border bg-gray-200 border-purple-600 absolute text-center right-5"
+            >
               <ul>
                 <li
-                  className="hover:bg-[#ff0000] hover:text-white px-5 cursor-pointer border-b border-slate-400"
+                  className="hover:bg-purple-900 hover:text-white text-black px-5 cursor-pointer border-b border-purple-600"
                   onClick={() =>
                     setEditState((prev) => ({
                       ...prev,
@@ -106,7 +128,7 @@ const TweetList = ({
                   Edit
                 </li>
                 <li
-                  className="hover:bg-[#ff0000] hover:text-white px-5 cursor-pointer"
+                  className="hover:bg-purple-900 hover:text-white text-black px-5 cursor-pointer"
                   onClick={() =>
                     setEditState((prev) => ({
                       ...prev,

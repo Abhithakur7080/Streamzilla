@@ -17,7 +17,7 @@ const VideoCard = () => {
 
 const VideosSkeleton = () => {
   return (
-    <div className="w-full grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 align-middle">
+    <div className="w-full grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 align-middle min-h-[calc(100vh-100px)] bg-gray-900">
       <VideoCard />
       <VideoCard />
       <VideoCard />

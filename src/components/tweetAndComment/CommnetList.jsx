@@ -48,7 +48,7 @@ const CommentList = ({
   };
   return (
     <>
-      <div className="text-black w-full flex justify-start items-center sm:gap-5 border-b border-slate-800 p-3 sm:p-5">
+      <div className=" w-full flex justify-start items-center sm:gap-5 border-b border-slate-800 p-3 sm:p-5 text-white">
         <div className="w-12">
           <img
             src={avatar || avatar2}
@@ -58,8 +58,8 @@ const CommentList = ({
         </div>
         <div className="w-full flex flex-col gap-1 relative">
           <div className="flex items-center gap-2">
-            <h2 className="text-xs">{username}</h2>
-            <span className="text-xs text-slate-800">{timeAgo(createdAt)}</span>
+            <h2 className="text-xs">@{username}</h2>
+            <span className="text-xs text-slate-300">{timeAgo(createdAt)}</span>
           </div>
           {authUsername === username && (
             <div className="absolute right-0">

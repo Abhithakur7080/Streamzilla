@@ -38,7 +38,7 @@ const ChannelHeader = ({
   };
   return (
     <>
-      <div className="w-full text-black">
+      <div className="w-full">
         <section className="w-full">
           {coverImage ? (
             <div className="relative">
@@ -74,20 +74,20 @@ const ChannelHeader = ({
           </div>
           <div className="w-full md:h-24 sm:h-20 flex justify-between items-start px-1">
             <div>
-              <h1 className="text-xl font-bold">{fullName}</h1>
-              <h3 className="text-sm text-slate-800">@{username}</h3>
+              <h1 className="text-xl font-bold text-white">{fullName}</h1>
+              <h3 className="text-sm text-gray-300">@{username}</h3>
               <div className="flex gap-1">
-                <p className="text-xs text-slate-800">
+                <p className="text-xs text-gray-300">
                   {localSubscribersCount && localSubscribersCount} Subscribers
                 </p>
-                <p className="text-xs text-slate-800">
+                <p className="text-xs text-gray-300">
                   {subscribedCount && subscribedCount} Subscribed
                 </p>
               </div>
             </div>
             {user === userProfile && !edit && (
               <Link to={"/edit"}>
-                <Button className="border-slate-600 hover:scale-110 transition-all text-white px-4 py-1 bg-[#ff0000]">
+                <Button className="border-slate-600 hover:scale-110 transition-all text-white px-4 py-1 bg-purple-900">
                   Edit
                 </Button>
               </Link>
@@ -95,14 +95,14 @@ const ChannelHeader = ({
             {user !== userProfile && !edit && (
               <Button
                 onClick={handleSubscribe}
-                className="border-slate-600 hover:scale-110 transition-all text-white px-4 py-1 bg-[#ff0000]"
+                className="border-slate-600 hover:scale-110 transition-all text-white px-4 py-1 bg-purple-900"
               >
                 {localIsSubscribed ? "Subscribed" : "Subscribe"}
               </Button>
             )}
             {edit && (
               <Link to={`/channel/${username}`}>
-                <Button className="border-slate-600 hover:scale-110 transition-all text-white px-4 py-1 bg-[#ff0000]">
+                <Button className="border-slate-600 hover:scale-110 transition-all text-white px-4 py-1 bg-purple-900">
                   View Channel
                 </Button>
               </Link>

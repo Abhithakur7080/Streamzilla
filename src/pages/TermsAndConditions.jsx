@@ -9,7 +9,7 @@ const TermsAndConditions = () => {
     navigate("/");
   };
   return (
-    <div className=" mx-auto flex justify-center items-center h-screen bg-img w-screen">
+    <div className=" mx-auto flex justify-center items-center h-screen bg-gray-900 w-screen">
       <div className="bg-white p-8 border border-gray-500 text-black rounded-lg shadow-lg w-screen scale-up-center overflow-y-auto md:w-fit h-screen md:h-fit">
         <div className="mb-5">
           <Logo />
@@ -70,7 +70,7 @@ const TermsAndConditions = () => {
             onClick={handleClick}
             className={`${
               isChecked
-                ? "bg-[#ff0000] hover:bg-[#ff2000] text-white"
+                ? "bg-purple-900 hover:bg-purple-700 text-white"
                 : "bg-gray-400 text-black"
             } w-fit py-2 px-4 font-bold text-lg rounded  shadow-inner}`}
             disabled={!isChecked}

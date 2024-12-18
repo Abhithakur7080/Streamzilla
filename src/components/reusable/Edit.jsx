@@ -9,21 +9,21 @@ const Edit = ({ initialContent, onCancel, onSave }) => {
   return (
     <div className="w-full text-sm">
       <input
-        className="bg-gray-200 outline-none border-b w-3/4 p-2"
+        className="bg-gray-200 outline-none border-b w-3/4 p-2 text-black"
         value={editedContent}
         autoFocus
         onChange={(e) => setEditedContent(e.target.value)}
       />
-      <div>
+      <div className="mt-2 flex gap-2">
         <span
-          className="bg-gray-400 py-1 px-3 font-normal rounded-lg hover:bg-gray-300 cursor-pointer"
+          className="bg-gray-200 py-1 px-3 font-normal rounded-lg hover:bg-gray-300 text-black cursor-pointer"
           onClick={onCancel}
         >
           Cancel
         </span>
         <button
           onClick={handleSave}
-          className="bg-[#ff0000] text-white py-1 px-3 rounded-lg hover:bg-[#ff1000] cursor-pointer"
+          className="bg-purple-900 text-white py-1 px-3 rounded-lg hover:bg-purple-700 cursor-pointer"
         >
           Save
         </button>

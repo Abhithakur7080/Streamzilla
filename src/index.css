@@ -3,9 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body{
-  background-color: red;
-} */
+body{
+  background-color:#111827;
+}
 /* toaster css */
 .toast-success {
   border-radius: 0 !important;

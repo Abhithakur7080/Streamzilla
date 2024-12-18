@@ -31,7 +31,7 @@ const Navbar = () => {
     },
   ];
   return (
-    <div className="w-full bg-[#ff0000] flex justify-between items-center p-4 sm:gap-5 shadow-md sticky top-0 z-50">
+    <div className="w-full bg-purple-900 flex justify-between items-center p-4 sm:gap-5 shadow-md sticky top-0 z-50">
       {/* logo */}
       <div className="flex items-center justify-center gap-2 cursor-pointer">
         <Logo iconColor="#fff" textColor="white" />
@@ -68,12 +68,12 @@ const Navbar = () => {
       ) : (
         <div className="space-x-2 sm:flex hidden items-center">
           <Link to={"/login"}>
-            <Button className="bg-white border border-slate-500 hover:border-white hover:bg-[#ff0000]  hover:text-white sm:px-4 sm:py-2 p-2">
+            <Button className="bg-white border border-slate-500 hover:border-white hover:bg-purple-900 hover:text-white  sm:px-4 sm:py-2 p-2">
               Login
             </Button>
           </Link>
           <Link to={"/signup"}>
-            <Button className="bg-white border border-slate-500 hover:border-white hover:bg-[#ff0000] hover:text-white sm:px-4 sm:py-2 p-2">
+            <Button className="bg-white border border-slate-500 hover:border-white hover:bg-purple-900 hover:text-white sm:px-4 sm:py-2 p-2">
               Signup
             </Button>
           </Link>
@@ -114,7 +114,7 @@ const Navbar = () => {
                       ? { backgroundColor: "#ff0000", color: "#fff" }
                       : undefined
                   }
-                  className={`flex items-center border border-slate-500 gap-5 px-3 py-1 hover:bg-[#ff0000] text-black hover:text-white`}
+                  className={`flex items-center border border-slate-500 gap-5 px-3 py-1 hover:bg-purple-900 text-black hover:text-white`}
                 >
                   <div>{item.icon}</div>
                   <span className="text-lg">{item.title}</span>
@@ -124,12 +124,12 @@ const Navbar = () => {
             {!authStatus ? (
               <div className="flex flex-col space-y-5 mb-3">
                 <Link to={"/login"}>
-                  <Button className="w-full bg-[#ff0000] border hover:bg-white hover:text-black border-slate-500 py-1 px-3">
+                  <Button className="w-full bg-purple-900 border hover:bg-white hover:text-black border-slate-500 py-1 px-3">
                     Login
                   </Button>
                 </Link>
                 <Link to={"/signup"}>
-                  <Button className="w-full bg-[#ff0000] border hover:bg-white hover:text-black border-slate-500 py-1 px-3">
+                  <Button className="w-full bg-purple-900 border hover:bg-white hover:text-black border-slate-500 py-1 px-3">
                     Signup
                   </Button>
                 </Link>
@@ -140,7 +140,7 @@ const Navbar = () => {
                   to={"/terms&conditions"}
                   className={"mb-1"}
                 >
-                  <div className="flex gap-2 justify-start items-start py-1 px-2 border border-slate-600 text-black cursor-pointer hover:bg-[#ff0000] hover:text-white">
+                  <div className="flex gap-2 justify-start items-start py-1 px-2 border border-slate-600 text-black cursor-pointer hover:bg-purple-900 hover:text-white">
                     <icons.IoNewspaperOutline size={25} />
                     <span className="text-base">
                       Terms & Conditions
@@ -148,7 +148,7 @@ const Navbar = () => {
                   </div>
                 </NavLink>
                 <div
-                  className="flex gap-2 justify-start items-start py-1 px-2 border border-slate-600 text-black cursor-pointer hover:bg-[#ff0000] hover:text-white "
+                  className="flex gap-2 justify-start items-start py-1 px-2 border border-slate-600 text-black cursor-pointer hover:bg-purple-900 hover:text-white "
                   onClick={() => logout()}
                 >
                   <icons.IoMdLogOut size={25} />

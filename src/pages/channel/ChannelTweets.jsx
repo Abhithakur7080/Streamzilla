@@ -13,12 +13,11 @@ const ChannelTweets = () => {
       dispatch(getUserTweets(userId));
     }
   }, [authId, userId, dispatch]);
-  console.log(tweets)
   return (
     <>
       {authId === userId && <TweetAndComment tweet={true} />}
       {tweets?.length === 0 && (
-        <div className="w-full min-h-10 flex justify-center items-center">
+        <div className="w-full min-h-10 flex justify-center items-center text-white">
           <h1>No Tweet Found</h1>
         </div>
       )}

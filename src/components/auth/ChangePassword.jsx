@@ -3,6 +3,7 @@ import { Input2, Button } from "..";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { changePassword } from "../../reducers/Slices/authSlice";
+import { Link, useNavigate } from "react-router-dom";
 
 const ChangePassword = () => {
   const {
@@ -13,6 +14,7 @@ const ChangePassword = () => {
     resetField,
   } = useForm();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const onSubmit = (data) => {
     dispatch(
       changePassword({
@@ -24,11 +26,17 @@ const ChangePassword = () => {
     resetField("newPassword");
     resetField("confirmPassword");
   };
+  const handleOutsideClick = (e) => {
+    if (e.target.classList.contains("backdrop")) {
+      navigate("/edit")
+    }
+  };
   return (
-    <div className="w-full text-black flex justify-center items-center mt-12">
-      <div className="bg-transparent p-8 border rounded shadow-lg w-full max-w-md">
-        <h2 className="text-lg font-bold mb-4">Change Password</h2>
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y4">
+    <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-900 bg-opacity-70 z-50 backdrop" onClick={handleOutsideClick}>
+      <div className="bg-purple-600 pt-6 rounded shadow-lg w-full max-w-md scale-up-center">
+        <h2 className="text-lg font-bold text-white  px-8 py-0">Change Password</h2>
+        <p className="text-xs text-gray-100 px-8 mb-3">Be insure and remember before submit.</p>
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y4 bg-white text-black px-8">
           <div className="flex flex-col">
             <Input2
               label="Old Password"
@@ -79,10 +87,16 @@ const ChangePassword = () => {
               </span>
             )}
           </div>
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-around mt-4 pb-4">
+            <Link
+              to={"/edit"}
+              className="bg-gray-500 text-black px-4 py-2 rounded"
+            >
+              Cancel
+            </Link>
             <Button
               type="submit"
-              className="bg-[#ff0000] text-white px-4 py-2 rounded"
+              className="bg-purple-900 text-white px-4 py-2 rounded"
             >
               Change Password
             </Button>

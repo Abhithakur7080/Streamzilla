@@ -38,8 +38,8 @@ const Login = () => {
     return <LoginSkeleton status="Logging in..." />;
   }
   return (
-    <div className="w-full h-screen text-white flex justify-center items-start bg-img">
-      <div className="flex my-auto h-fit md:max-w-5xl flex-col space-y-5 justify-center items-center md:border md:border-slate-300 p-3 shadow-inner bg-white scale-up-center">
+    <div className="w-full h-screen flex justify-center items-start bg-gray-900">
+      <div className="flex my-auto h-fit md:max-w-5xl flex-col space-y-5 justify-center items-center md:border-2 md:border-purple-900 p-3 shadow-inner bg-gray-50 scale-up-center">
         <div className="flex items-center gap-2 mt-8">
           <Logo />
         </div>
@@ -85,7 +85,7 @@ const Login = () => {
 
             <Button
               type="submit"
-              className={`w-full py-2 mt-4 sm:py-3 text-lg text-white ${loading ? "bg-gray-600" : "bg-[#ff0000] hover:bg-[#ff2000]"}`}
+              className={"w-full py-2 mt-4 sm:py-3 text-lg text-white bg-purple-900 hover:bg-purple-700"}
             >
               Login
             </Button>

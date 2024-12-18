@@ -42,8 +42,8 @@ const Signup = () => {
     return <LoginSkeleton status="Registering.." />;
   }
   return (
-    <div className="w-full h-screen text-black flex justify-center items-start bg-img">
-      <div className="w-fit sm:max-w-5xl flex flex-col p-3 space-y-2 justify-center items-center md:border md:border-gray-200 bg-white my-auto scale-up-center">
+    <div className="w-full h-screen text-black flex justify-center items-start bg-gray-900">
+      <div className="w-fit sm:max-w-5xl flex flex-col p-3 space-y-2 justify-center items-center md:border-2 md:border-purple-900 bg-gray-50 my-auto scale-up-center">
         <div className="flex items-center gap-2">
           <Logo />
         </div>
@@ -140,7 +140,7 @@ const Signup = () => {
 
           <Button
             type="submit"
-            className="w-full py-2 sm:py-3 bg-[#ff0000] hover:bg-[#ff2000] text-lg text-white hover:scale-100"
+            className="w-full py-2 sm:py-3 text-lg text-white bg-purple-900 hover:bg-purple-700"
           >
             Signup
           </Button>

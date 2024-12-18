@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 
 const Logo = ({
   size = 30,
-  iconColor = "#ff0000",
-  textColor = "black",
+  iconColor = "#581c87",
+  textColor = "purple-900",
 }) => {
   return (
     <>
-      <Link to={"/"} className="flex gap-2 items-center">
-        <icons.IoLogoYoutube size={size} color={iconColor} />
+      <Link to={"/"} className="flex gap-2 items-center select-none">
+        <icons.IoLogoPlaystation size={size} color={iconColor} />
         <span
           className={`font-extrabold text-${textColor} font-roboto tracking-widest`}
         >
-          Youtube
+          Streamzilla
         </span>
       </Link>
     </>

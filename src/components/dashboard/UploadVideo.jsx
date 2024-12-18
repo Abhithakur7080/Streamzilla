@@ -46,13 +46,18 @@ const UploadVideo = ({ setUploadVideoPopup }) => {
       </>
     );
   }
+  const handleOutsideClick = (e) => {
+    if (e.target.classList.contains("backdrop")) {
+      setUploadVideoPopup((prev) => !prev);
+    }
+  };
 
   return (
     <>
-      <div className="fixed top-[4.35rem] left-0 w-full h-[calc(100vh-60px)] flex justify-center items-center bg-gray-500 bg-opacity-70 z-50">
-        <div className="relative w-[95vw] sm:w-3/4 h-[75vh] sm:h-[75vh] mx-auto text-black border overflow-y-auto bg-white scale-up-center">
+      <div className="fixed top-[4.35rem] left-0 w-full h-[calc(100vh-60px)] flex justify-center items-center bg-gray-900 bg-opacity-70 z-50 backdrop" onClick={handleOutsideClick}>
+        <div className="relative w-[95vw] sm:w-3/4 h-[75vh] sm:h-[75vh] mx-auto text-white overflow-y-auto bg-white scale-up-center">
           <form onSubmit={handleSubmit(publishVideo)} className="space-y-5">
-            <section className="h-12 sticky top-0 z-50 border-b w-full bg-gray-200 flex justify-between items-center px-3">
+            <section className="h-12 sticky top-0 z-50 border-b w-full bg-purple-600 flex justify-between items-center px-3">
               <div className="flex gap-1 items-center cursor-pointer">
                 <icons.IoCloseCircleOutline
                   size={25}
@@ -62,14 +67,14 @@ const UploadVideo = ({ setUploadVideoPopup }) => {
               </div>
               <div>
                 <Button
-                  className="bg-[#ff0000] py-1 px-2 font-bold text-white"
+                  className="bg-purple-900 py-1 px-2 font-bold text-white border rounded"
                   type="submit"
                 >
                   Save
                 </Button>
               </div>
             </section>
-            <section className="px-6 py-2">
+            <section className="px-6 py-2 text-black">
               <div className="w-full border border-dotted border-gray-700 h-48 p-1 flex flex-col gap-3 justify-center items-center text-center overflow-y-auto">
                 <div className="mt-4">
                   <h1 className="font-medium text-sm">
@@ -137,7 +142,7 @@ const UploadVideo = ({ setUploadVideoPopup }) => {
                         name="description"
                         id="description"
                         rows="5"
-                        className="focus:bg-gray-100 bg-white outline-none w-full border border-gray-500 mt-1 p1 resize-none overflow-y-auto"
+                        className="focus:bg-gray-100 px-2 bg-white outline-none w-full border border-gray-500 mt-1 p1 resize-none overflow-y-auto"
                         {...register("description", {
                           required: "Description is required",
                         })}

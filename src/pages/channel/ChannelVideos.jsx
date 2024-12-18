@@ -40,7 +40,7 @@ const ChannelVideos = () => {
             handleSort("createdAt", "desc");
           }}
           className={`group py-1 px-2 rounded-md ${
-            activeButton === "button1" ? "bg-[#ff0000] text-white" : "bg-slate-400"
+            activeButton === "button1" ? "bg-purple-900 text-white" : "bg-slate-50"
           }`}
         >
           Latest
@@ -51,7 +51,7 @@ const ChannelVideos = () => {
             handleSort("views", "desc");
           }}
           className={`group py-1 px-2 rounded-md ${
-            activeButton === "button2" ? "bg-[#ff0000] text-white" : "bg-slate-400"
+            activeButton === "button2" ? "bg-purple-900 text-white" : "bg-slate-50"
           }`}
         >
           Popular
@@ -62,7 +62,7 @@ const ChannelVideos = () => {
             handleSort("createdAt", "asc");
           }}
           className={`group py-1 px-2 rounded-md ${
-            activeButton === "button3" ? "bg-[#ff0000] text-white" : "bg-slate-400"
+            activeButton === "button3" ? "bg-purple-900 text-white" : "bg-slate-50"
           }`}
         >
           Oldest
