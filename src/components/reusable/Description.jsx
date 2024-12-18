@@ -41,7 +41,7 @@ const Description = ({
             <h1 className="sm:text-2xl font-semibold">{title}</h1>
             <div className="flex items-center justify-between sm:justify-start sm:gap-5">
               <div>
-                <span className="text-sm text-slate-300">{views} views .</span>
+                <span className="text-sm text-slate-300">{views} views </span>
                 <span className="text-sm text-slate-300">
                   {timeAgo(createdAt)}
                 </span>
