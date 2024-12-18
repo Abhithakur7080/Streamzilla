@@ -131,7 +131,7 @@ const Sidebar = () => {
             key={item.title}
             className={({ isActive }) => (isActive ? "text-purple-900 bg-white w-1/4" : "w-1/4")}
           >
-            <div className="flex flex-col items-center gap-1 cursor-pointer p-1 text-xs">
+            <div className="flex flex-col items-center gap-1 cursor-pointer p-1 pt-2 text-xs">
               {item.icon}
               <span className="text-xs">{item.title}</span>
             </div>
