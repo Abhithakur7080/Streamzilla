@@ -51,7 +51,7 @@ console.log(popUp)
   return (
     <>
       <Container>
-        <div className="w-full h-[calc(100vh-100px)] relative  bg-green text-black space-y-5 z-10 px-1">
+        <div className="w-full relative h-full text-black space-y-5 z-10 px-1">
           {popUp.uploadVideo && <UploadVideo setUploadVideoPopup={setPopUp} />}
           {popUp.editVideo && (
             <EditVideo

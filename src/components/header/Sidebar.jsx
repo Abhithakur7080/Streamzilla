@@ -124,12 +124,12 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      <div className=" h-16 sm:hidden z-20 w-full flex justify-around fixed bottom-0 bg-purple-900 text-white p-1">
+      <div className=" h-16 sm:hidden z-20 w-full flex justify-between fixed bottom-0 bg-purple-900 text-white">
         {bottomBarItems.map((item) => (
           <NavLink
             to={item.url}
             key={item.title}
-            className={({ isActive }) => (isActive ? "text-purple-900 bg-white px-2 rounded-md" : "")}
+            className={({ isActive }) => (isActive ? "text-purple-900 bg-white w-1/4" : "w-1/4")}
           >
             <div className="flex flex-col items-center gap-1 cursor-pointer p-1">
               {item.icon}
