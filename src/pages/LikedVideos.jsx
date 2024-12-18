@@ -22,7 +22,7 @@ const LikedVideos = () => {
   }
   return (
     <Container>
-      <div className="grid max-h-screen overflow-y-auto lg:grid-cols-3 sm:grid-cols-2 text-black mb-20 sm:mb-0 p-3">
+      <div className="grid max-h-screen overflow-y-auto lg:grid-cols-3 sm:grid-cols-2 text-black mb-20 sm:mb-0 p-3 scrollbar-active">
         {likedVideos?.map((video) => (
           <VideoList
             key={video.likedVideo._id}

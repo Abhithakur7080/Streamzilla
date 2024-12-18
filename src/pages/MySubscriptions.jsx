@@ -34,7 +34,7 @@ const MySubscriptions = () => {
           </div>
         ))}
       </div>
-      <div className="text-black mb-20 sm:mb-0 w-full grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 overflow-y-auto">
+      <div className="text-black mb-20 sm:mb-0 w-full grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 overflow-y-auto scrollbar-active">
         {subscriptions.map((subscription) => (
           <Link
             to={`/watch/${subscription?.subscribedChannel?.latestVideo?._id}`}
