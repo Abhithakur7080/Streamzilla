@@ -40,7 +40,7 @@ const VideoDetails = () => {
     }
   }, [page, loading, hasNextPage, dispatch, videoId]);
   return (
-    <div className="w-full h-[calc(100vh-120px)] mb-20 sm:mb-0 sm:h-[calc(100vh-50px)] bg-gray-900 overflow-y-auto">
+    <div className="w-full h-[calc(100vh-120px)] mb-20 sm:mb-0 sm:h-screen bg-gray-900 overflow-y-auto">
       <Navbar />
       <Video src={video?.videoFile?.url} poster={video?.thumbnail?.url} />
       <Description
